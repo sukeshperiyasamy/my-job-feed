@@ -1,0 +1,33 @@
+# Virtual environments
+.venv/
+.venv-linux/
+venv/
+ENV/
+
+# Databases & local state
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+*.db
+*.sqlite
+
+# Third-party nested apps
+apps/
+node_modules/
+
+# Browser profiles & screenshots
+browser-profiles/
+screenshots/
+logs/
+backups/
+
+# Cache
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment files
+.env
+.env.local
