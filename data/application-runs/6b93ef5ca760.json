@@ -1,0 +1,41 @@
+{
+  "application_url": "https://jobs.lever.co/dozee/81a2044f-f802-4850-830e-aed3d4133bf4/apply",
+  "mode": "approval_required",
+  "status": "Manual Action Required",
+  "screenshot": "C:\\sukesh\\job\\screenshots\\application_6b93ef5ca760_20261116_181324.png",
+  "confirmation_code": null,
+  "error": "Submit clicked but no reliable confirmation found. Check the portal before any further action.",
+  "events": [
+    {
+      "step": 1,
+      "url": "https://jobs.lever.co/dozee/81a2044f-f802-4850-830e-aed3d4133bf4/apply",
+      "filled_fields": [
+        "Resume/CV\n\u2731\nATTACH RESUME/CV",
+        "Full name\n\u2731",
+        "Email\n\u2731",
+        "Phone\n\u2731",
+        "Current location\n\u2731",
+        "LinkedIn URL\n\u2731",
+        "GitHub URL"
+      ],
+      "missing_fields": [
+        "Current company\n\u2731",
+        "Current location\n\u2731"
+      ]
+    },
+    {
+      "step": 2,
+      "url": "https://jobs.lever.co/dozee/81a2044f-f802-4850-830e-aed3d4133bf4/apply",
+      "filled_fields": [],
+      "missing_fields": []
+    }
+  ],
+  "submission_attempted": true,
+  "portal": "lever",
+  "current_url": "https://jobs.lever.co/dozee/81a2044f-f802-4850-830e-aed3d4133bf4/apply",
+  "missing_fields": [],
+  "filled_fields": [],
+  "field_errors": [],
+  "field_count": 12,
+  "resume_attached": true
+}

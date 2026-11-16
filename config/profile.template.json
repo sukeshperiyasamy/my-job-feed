@@ -1,0 +1,42 @@
+{
+  "full_name": "Your Legal Name",
+  "email": "your.email@example.com",
+  "phone": "+91 90000 00000",
+  "location": "City, Country",
+  "linkedin": "https://linkedin.com/in/yourprofile",
+  "github": "https://github.com/yourprofile",
+  "summary": "Professional summary highlighting your core strengths...",
+  "skills": [
+    "Skill 1",
+    "Skill 2",
+    "Skill 3"
+  ],
+  "experience": [
+    {
+      "company": "Company Name",
+      "role": "Job Title",
+      "start": "2022",
+      "end": "Present",
+      "bullets": [
+        "Key achievement or responsibility 1",
+        "Key achievement or responsibility 2"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Degree Name",
+      "institution": "University / College",
+      "year": "2020"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project Name",
+      "tech_stack": "Technologies used",
+      "highlights": [
+        "Key accomplishment"
+      ]
+    }
+  ]
+}

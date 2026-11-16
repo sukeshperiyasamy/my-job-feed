@@ -1,0 +1,79 @@
+% One-page resume template for Sukesh Periyasamy
+\documentclass[9.2pt,a4paper]{article}
+\usepackage[margin=0.48in,top=0.32in,bottom=0.32in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}\renewcommand{\familydefault}{\sfdefault}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F3A5F}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\bfseries\large\color{accent}}{}{0em}{\MakeUppercase}[\vspace{-0.65em}\color{accent}\rule{\linewidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{3.5pt}{1.5pt}
+\setlist[itemize]{leftmargin=1.1em,itemsep=0pt,topsep=0.5pt,parsep=0pt}
+\newcommand{\role}[3]{\textbf{#1}\hfill\textit{#2}\\[-2pt]\textit{\small #3}\par}
+
+\begin{document}
+
+\begin{center}
+{\huge\bfseries SUKESH PERIYASAMY}\\[1.5pt]
+{\large\bfseries\color{accent} Lead Python Engineer}\\[1.5pt]
+\small sukeshperiyasamy@gmail.com \,|\, +91 9943969595 \,|\, \href{https://linkedin.com/in/sukeshperiyasamy}{linkedin.com/in/sukeshperiyasamy} \,|\, \href{https://github.com/sukeshperiyasamy}{github.com/sukeshperiyasamy}\\
+Karur, Tamil Nadu \,|\, Available immediately \,|\, Open to relocation
+\end{center}
+
+\section{Profile Summary}
+M.Tech Medical Technology graduate from IIT Jodhpur (CGPA 8.53/10) offering hands-on expertise in biomedical instrumentation, sensor integration, and software engineering. Demonstrated ability to build robust production systems (IITJ One, NeoBridge) and execute rigorous scientific research.
+
+\section{Skills}
+\textbf{Software \& Mobile:} React Native (Expo), TypeScript, Node.js, Next.js, Python, MongoDB, Redis, Docker, Git\\
+\textbf{Embedded \& Hardware:} ESP32, Arduino, Raspberry Pi, Circuit Design, Sensor Integration, EMG Acquisition, Signal Processing\\
+\textbf{Sensors \& Instrumentation:} SERS Chips, Raman Spectroscopy, Nanofabrication (Ag/Au coating), Cleanroom protocols, Calibration
+
+\section{Projects}
+\role{IITJ One --- Campus Mobile Platform}{\href{https://iitjone.in}{iitjone.in} \,|\, \href{https://github.com/Godevs04/IITJ_One}{GitHub}}{Stack: React Native (Expo), TypeScript, Express, Next.js, Redis, MongoDB, Docker}
+\begin{itemize}
+  \item Architected and published official campus mobile app live on Google Play and Apple App Store serving 2,000+ active students and faculty.
+  \item Engineered high-performance backend with Redis caching and Socket.IO real-time notifications, containerized using Docker.
+\end{itemize}
+
+\role{NeoBridge --- Neonatal Kangaroo-Care Monitor}{\href{https://neobridge.vercel.app}{Live App} \,|\, \href{https://github.com/sukeshperiyasamy/NeoBridge}{GitHub}}{Stack: ESP32 Firmware, BLE, React Native, Hono, Neon Postgres}
+\begin{itemize}
+  \item Developed custom ESP32 wearable band firmware and Bluetooth Low Energy telemetry for continuous newborn temperature monitoring.
+  \item Built cross-platform mobile companion app providing temperature trend tracking, maternal alerts, and demo-mode clinical AI insights.
+\end{itemize}
+
+\role{Doc-RAG --- Local GraphRAG Scientific QA}{\href{https://github.com/sukeshperiyasamy}{GitHub}}{Stack: Python, Ollama (qwen2.5:3b), LightRAG, NetworkX, FastEmbed}
+\begin{itemize}
+  \item Constructed knowledge graph extracting 15,199 entities and 7,252 relationships across 1,438 scientific document chunks.
+  \item Benchmarked question-answering accuracy achieving 100\% Recall@5 and 90\% Recall@3 without external cloud API dependencies.
+\end{itemize}
+
+\section{Experience}
+\role{Junior Research Fellow (SERS Biosensor for Sepsis)}{May 2026 -- Nov 2026}{IIT Jodhpur \& AIIMS Jodhpur (TCS Project), Jodhpur}
+\begin{itemize}
+  \item Fabricated SERS silicon chips via metal-assisted chemical etching with Ag/Au nanocoatings in cleanroom facilities for bacterial marker detection (LPS, peptidoglycans).
+  \item Executed Python-based Raman spectroscopic analysis across 120--150 spectra per run, establishing calibration curves and standard operating protocols.
+\end{itemize}
+
+\role{Technical Workshop Instructor}{2026}{KEC College, Tamil Nadu}
+\begin{itemize}
+  \item Delivered 4-day intensive technical training on IoT, embedded systems (ESP32/Arduino), Linux, and hardware debugging for 35+ students.
+\end{itemize}
+
+\role{Software Testing Intern}{Oct 2022 -- Nov 2022}{Atos Syntel, Remote}
+\begin{itemize}
+  \item Executed functional, regression, and integration testing within an Agile SDLC; authored defect reports and test suites.
+\end{itemize}
+
+\section{Education}
+\role{M.Tech, Medical Technology (CGPA 8.53 / 10, First Class)}{2024 -- 2026}{IIT Jodhpur (Joint Program with AIIMS Jodhpur)}
+\role{Master of Computer Applications --- MCA (CGPA 7.20 / 10, First Class)}{2022 -- 2024}{Erode Sengunthar Engineering College}
+\role{B.Sc., Information Technology (CGPA 6.90 / 10, First Class)}{2019 -- 2022}{Kongu Arts and Science College}
+
+\section{Achievements and Certifications}
+TCS-Funded JRF Fellowship Award (IIT Jodhpur) \,|\, Published IITJ One on Google Play \& iOS App Store \,|\, KEC IoT Workshop Lead
+
+\end{document}

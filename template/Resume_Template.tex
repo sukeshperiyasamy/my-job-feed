@@ -1,0 +1,56 @@
+% One-page resume template. Compile with pdflatex (or paste into Overleaf).
+% Edit only the text inside the braces. Delete any section you do not need.
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=0.6in,top=0.5in,bottom=0.5in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}\renewcommand{\familydefault}{\sfdefault}  % clean sans-serif; works on any LaTeX install
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F3A5F}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\bfseries\large\color{accent}}{}{0em}{\MakeUppercase}[\vspace{-0.6em}\color{accent}\rule{\linewidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=1pt,topsep=2pt,parsep=0pt}
+\newcommand{\role}[3]{\textbf{#1}\hfill\textit{#2}\\[-1pt]\textit{\small #3}\par}
+\begin{document}
+
+\begin{center}
+{\Huge\bfseries YOUR NAME}\\[3pt]
+{\large\bfseries\color{accent} Target Role Title}\\[3pt]
+\small email@example.com \,|\, +91 00000 00000 \,|\, \href{https://linkedin.com/in/yourname}{linkedin.com/in/yourname} \,|\, \href{https://github.com/yourname}{github.com/yourname}\\
+City, State \,|\, Available immediately \,|\, Open to relocation
+\end{center}
+
+\section{Profile Summary}
+Two to three lines: your degree, your strongest proof (one shipped project or result), and the role you want. Match the wording to the job description.
+
+\section{Skills}
+\textbf{Category one:} skill, skill, skill, skill\\
+\textbf{Category two:} skill, skill, skill, skill\\
+\textbf{Category three:} skill, skill, skill, skill
+
+\section{Projects}
+\role{Project name, short description}{\href{https://example.com}{Live} \,|\, \href{https://github.com/yourname/repo}{GitHub}}{Stack: tool, tool, tool}
+\begin{itemize}
+  \item What you built and the result (use a number if you have a real one).
+  \item The hardest problem you solved and how.
+\end{itemize}
+
+\section{Experience}
+\role{Job title, project or team}{Month Year -- Month Year}{Organisation, location}
+\begin{itemize}
+  \item Action verb + what you did + outcome.
+  \item Action verb + what you did + outcome.
+\end{itemize}
+
+\section{Education}
+\role{Degree, specialisation (CGPA x.xx/10)}{Year -- Year}{Institution}
+\role{Degree, specialisation (CGPA x.xx/10)}{Year -- Year}{Institution}
+
+\section{Achievements and Certificates}
+Achievement one \,|\, Achievement two \,|\, Certificate (issuer, year)
+
+\end{document}

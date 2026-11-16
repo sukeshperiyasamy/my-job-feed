@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mock Enterprise Careers Portal — Application Form</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f7fafc; margin: 0; padding: 24px; color: #2d3748; }
+    .container { max-width: 650px; margin: 0 auto; background: #ffffff; padding: 32px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    h1 { font-size: 20px; color: #1a202c; border-bottom: 2px solid #edf2f7; padding-bottom: 12px; margin-top: 0; }
+    .job-badge { background: #ebf8ff; color: #2b6cb0; padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
+    .form-group { margin-bottom: 16px; }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #4a5568; }
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+      width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 14px; box-sizing: border-box;
+    }
+    input:focus, select:focus, textarea:focus { border-color: #3182ce; outline: none; }
+    .file-drop { border: 2px dashed #cbd5e0; padding: 20px; text-align: center; border-radius: 6px; background: #f8fafc; }
+    .checkbox-group { display: flex; align-items: center; gap: 8px; font-size: 13px; margin: 20px 0; }
+    .btn { background: #3182ce; color: #ffffff; border: none; padding: 12px 24px; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; }
+    .btn:hover { background: #2b6cb0; }
+    #confirmation { display: none; background: #f0fff4; border: 1px solid #9ae6b4; padding: 20px; border-radius: 6px; color: #22543d; text-align: center; margin-top: 20px; }
+    #confirmation h2 { margin: 0 0 8px 0; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="job-badge">REQ-89024 &bull; Senior Python / Automation Engineer</div>
+    <h1>Job Application: CloudScale Innovations</h1>
+    <form id="app-form" onsubmit="event.preventDefault(); document.getElementById('confirmation').style.display='block';">
+      <div class="form-group">
+        <label for="full_name">Full Legal Name *</label>
+        <input type="text" id="full_name" name="full_name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="linkedin">LinkedIn Profile URL</label>
+        <input type="text" id="linkedin" name="linkedin">
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Years of Relevant Experience *</label>
+        <select id="experience" name="experience" required>
+          <option value="">Select...</option>
+          <option value="1-3">1-3 Years</option>
+          <option value="4-7">4-7 Years</option>
+          <option value="8+">8+ Years</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="work_auth">Work Authorization Status *</label>
+        <select id="work_auth" name="work_auth" required>
+          <option value="">Select...</option>
+          <option value="authorized">Authorized to work in India</option>
+          <option value="require_sponsorship">Requires Sponsorship</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="resume">Resume / CV (PDF) *</label>
+        <div class="file-drop">
+          <input type="file" id="resume" name="resume" accept=".pdf" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cover_letter">Cover Letter</label>
+        <textarea id="cover_letter" name="cover_letter" rows="4"></textarea>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="legal_consent" name="legal_consent" required>
+        <label for="legal_consent">I confirm that all statements made in this application are true and verified.</label>
+      </div>
+
+      <button type="submit" id="submit-btn" class="btn">Submit Application</button>
+    </form>
+
+    <div id="confirmation">
+      <h2>Application Submitted Successfully!</h2>
+      <p>Confirmation Reference: <strong>APP-2026-99214</strong></p>
+      <p>Our talent acquisition team will review your qualifications and contact you.</p>
+    </div>
+  </div>
+</body>
+</html>

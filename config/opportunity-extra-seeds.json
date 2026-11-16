@@ -1,0 +1,103 @@
+[
+  {
+    "id": "hackerrank-intern8229735",
+    "category": "internship",
+    "title": "Software Development Engineer Intern",
+    "organization": "HackerRank",
+    "location": "Bengaluru, India (full-time onsite)",
+    "status": "Verified open",
+    "source_name": "HackerRank official Greenhouse posting and public job API",
+    "source_url": "https://job-boards.greenhouse.io/hackerrank/jobs/8229735",
+    "application_url": "https://job-boards.greenhouse.io/hackerrank/jobs/8229735",
+    "deadline_note": "Not published; application form available when reviewed",
+    "evidence": "Official individual application form is active and the public Greenhouse job endpoint returns this job ID. Form asks for full-time availability from 5 January 2027.",
+    "details": {
+      "experience": "Internship; no numerical minimum years stated in reviewed notice",
+      "eligibility": "Full-time onsite availability throughout six months; confirm graduate eligibility if needed",
+      "pay": "Paid internship; amount undisclosed",
+      "duration": "January–June 2027; application form states 5 January start",
+      "technologies": "Software development, production code and developer tooling; languages not specified",
+      "regulatory": "Not a medical-device role",
+      "fit": "Strong software/QA/Python portfolio overlap. Confirm availability and education eligibility; selection is not guaranteed.",
+      "recommended_resume": "Software / full-stack / QA resume with deployed projects",
+      "description": "In-office software internship with mentorship and production contributions. Return offers are considered, not guaranteed.",
+      "additional_sources": [
+        "https://boards-api.greenhouse.io/v1/boards/hackerrank/jobs/8229735?content=true"
+      ]
+    },
+    "verified_at": "2026-11-16T13:02:53.156755+00:00",
+    "first_seen_at": "2026-11-16T13:02:53.156755+00:00",
+    "changed_at": "2026-11-16T13:02:53.156755+00:00"
+  },
+  {
+    "id": "enterpret-intern7847134003",
+    "category": "internship",
+    "title": "[Backend, Onsite] Software Engineering Intern",
+    "organization": "Enterpret",
+    "location": "Bengaluru, India (onsite)",
+    "status": "Verified open",
+    "source_name": "Enterpret official Greenhouse individual posting",
+    "source_url": "https://job-boards.greenhouse.io/enterpret/jobs/7847134003",
+    "application_url": "https://job-boards.greenhouse.io/enterpret/jobs/7847134003",
+    "deadline_note": "Not published",
+    "evidence": "Official detailed role page displays an application form and submit control. Current-enrollment and prior-internship requirements are stated.",
+    "details": {
+      "experience": "At least one prior relevant backend/AI engineering internship",
+      "eligibility": "Pursuing CS/Engineering at a Tier 1 college; onsite Bangalore",
+      "pay": "Stipend offered; amount undisclosed",
+      "technologies": "AWS/serverless backend, distributed systems and AI integrations",
+      "fit": "Backend/AI projects align. Current-student requirement may exclude graduates; degree and prior-internship relevance need employer confirmation.",
+      "recommended_resume": "Software / backend / AI resume",
+      "description": "Build backend services and AI feature integrations with mentorship; a performance-based PPO is not guaranteed."
+    },
+    "verified_at": "2026-11-16T13:02:53.156755+00:00",
+    "first_seen_at": "2026-11-16T13:02:53.156755+00:00",
+    "changed_at": "2026-11-16T13:02:53.156755+00:00"
+  },
+  {
+    "id": "thales-embedded-r0347902",
+    "category": "internship",
+    "title": "Embedded Software Intern (R0347902)",
+    "organization": "Thales",
+    "location": "Bangalore, India",
+    "status": "Unverified",
+    "source_name": "Thales official individual career page",
+    "source_url": "https://careers.thalesgroup.com/global/en/job/TGPTGWGLOBALR0347902EXTERNALENGLOBAL/Embedded-Software-Intern",
+    "application_url": "https://careers.thalesgroup.com/global/en/job/TGPTGWGLOBALR0347902EXTERNALENGLOBAL/Embedded-Software-Intern",
+    "source_date": "Conflicting source dates; original posting date not established",
+    "deadline_note": "Not published",
+    "evidence": "Official structured job data and description retrieved, but a live application control was not verified. Not confirmed accepting applications.",
+    "details": {
+      "experience": "Internship; numerical years not stated",
+      "eligibility": "BE/BTech or ME/MTech in CS, ECE or related field",
+      "pay": "Undisclosed",
+      "technologies": "C/C++, data structures/OOP, microcontrollers, board bring-up, testing/debugging",
+      "fit": "Embedded/QA overlap; Medical Technology degree acceptance and live application availability need checking. Aerospace/defence, not a MedTech vacancy.",
+      "recommended_resume": "Embedded firmware / instrumentation resume"
+    },
+    "verified_at": null,
+    "first_seen_at": "2026-11-16T13:02:53.156755+00:00",
+    "changed_at": "2026-11-16T13:02:53.156755+00:00"
+  },
+  {
+    "id": "iitgn-winter2026-closed",
+    "category": "research",
+    "title": "Regular winter PhD cycle – dated deadline passed",
+    "organization": "IIT Gandhinagar",
+    "location": "Gandhinagar, Gujarat, India",
+    "status": "Expired",
+    "source_name": "IIT Gandhinagar detailed PhD admission schedule",
+    "source_url": "https://iitgn.ac.in/admissions/phd",
+    "application_url": "https://iitgn.ac.in/admissions/phd",
+    "deadline": "2026-10-01T17:00:00+05:30",
+    "evidence": "Admissions directory says Open, but the linked regular-cycle schedule gives a 1 October deadline. General exceptional consideration is not a verified new funded vacancy.",
+    "details": {
+      "department": "Relevant biological engineering, AI/CSE, electrical and design areas",
+      "fit": "Check for a separately dated new call; do not rely only on the directory Open badge.",
+      "exams": "Professional postgraduate route described; no current admission decision made because this cycle is closed."
+    },
+    "verified_at": "2026-11-16T13:02:53.156755+00:00",
+    "first_seen_at": "2026-11-16T13:02:53.156755+00:00",
+    "changed_at": "2026-11-16T13:02:53.156755+00:00"
+  }
+]

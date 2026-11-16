@@ -1,0 +1,35 @@
+{
+  "application_url": "http://127.0.0.1:60475/login.html",
+  "mode": "approval_required",
+  "status": "Submitted",
+  "screenshot": "C:\\sukesh\\job\\screenshots\\application_ac42ec42a61a_20261116_180337.png",
+  "confirmation_code": null,
+  "error": null,
+  "events": [
+    {
+      "step": 2,
+      "url": "http://127.0.0.1:60475/login.html",
+      "filled_fields": [
+        "First name *",
+        "Last name *",
+        "Email address *",
+        "Resume / CV *"
+      ],
+      "missing_fields": []
+    }
+  ],
+  "submission_attempted": true,
+  "portal": "employer",
+  "current_url": "http://127.0.0.1:60475/login.html",
+  "missing_fields": [],
+  "filled_fields": [
+    "First name *",
+    "Last name *",
+    "Email address *",
+    "Resume / CV *"
+  ],
+  "field_errors": [],
+  "field_count": 4,
+  "resume_attached": true,
+  "confirmation_text": "Application submitted successfully\n\nReference: REAL-42"
+}

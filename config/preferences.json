@@ -1,0 +1,43 @@
+{
+  "target_roles": [
+    "AI Engineer",
+    "Generative AI Engineer",
+    "RAG Engineer",
+    "Full Stack Developer",
+    "React Native Developer",
+    "Mobile Developer",
+    "Biomedical Engineer",
+    "MedTech Research Engineer",
+    "Device V&V Engineer",
+    "Software Engineer"
+  ],
+  "target_locations": [
+    "HSR Layout, Bengaluru",
+    "Bengaluru, Karnataka",
+    "Karur, Tamil Nadu",
+    "Coimbatore, Tamil Nadu",
+    "Remote"
+  ],
+  "preferences": {
+    "priority_order": [
+      "highest_pay",
+      "long_term_security",
+      "low_stress",
+      "fresher_friendly"
+    ],
+    "target_companies": [
+      "Medtronic",
+      "Atatus",
+      "Mallow Technologies",
+      "Infolexus",
+      "NAT IT Services",
+      "Caldor Health",
+      "Mercor"
+    ],
+    "application_mode": "approval_required",
+    "rate_limits": {
+      "discovery_interval_hours": 6,
+      "max_applications_per_day": 15
+    }
+  }
+}

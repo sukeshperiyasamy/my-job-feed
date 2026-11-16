@@ -1,0 +1,11 @@
+{
+  "application_url": "https://www.linkedin.com/jobs/1",
+  "mode": "approval_required",
+  "status": "Manual Action Required",
+  "screenshot": "",
+  "confirmation_code": null,
+  "error": "Discovery only. Import the employer's original application URL to apply.",
+  "events": [],
+  "submission_attempted": false,
+  "portal": "linkedin"
+}

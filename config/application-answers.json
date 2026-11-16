@@ -1,0 +1,4 @@
+{
+  "answers": {},
+  "instructions": "Map the EXACT question label to your verified answer. Strings fill text/selects. Booleans answer checkboxes. Unknown answers remain blank; do not guess experience, salary, notice period, relocation, sponsorship, or legal consent. You can also fill these directly in the application browser."
+}

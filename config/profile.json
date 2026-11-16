@@ -1,0 +1,213 @@
+{
+  "personal": {
+    "full_name": "Sukesh Periyasamy",
+    "dob": "2002-02-19",
+    "gender": "Male",
+    "marital_status": "Single",
+    "nationality": "Indian",
+    "category": "OBC",
+    "father_name": "Periyasamy",
+    "mother_name": "Sivamani",
+    "address": "4/1-53 Cheran Nagar, Punnam Chathiram, Karur, Tamil Nadu, 639136, India",
+    "city": "Karur",
+    "state": "Tamil Nadu",
+    "pincode": "639136",
+    "mobile": "9943969595",
+    "mobile_alt": "6385404070",
+    "email": "sukeshperiyasamy@gmail.com",
+    "email_academic": "sukeshiitj@gmail.com",
+    "linkedin": "https://linkedin.com/in/sukeshperiyasamy",
+    "github": "https://github.com/sukeshperiyasamy"
+  },
+  "summary": "M.Tech in Medical Technology (IIT Jodhpur & AIIMS Jodhpur) with expertise across RAG/GraphRAG architectures, full-stack & mobile development (React Native, Next.js, Node.js), and biomedical sensor integration. Proven track record publishing production mobile apps (IITJ One) and conducting cleanroom fabrication and Python signal processing for SERS biosensors.",
+  "skills": {
+    "software": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Java",
+      "C++",
+      "React",
+      "Next.js",
+      "React Native (Expo)",
+      "Node.js",
+      "Express",
+      "Hono",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "GitHub Actions",
+      "Vercel",
+      "Git"
+    ],
+    "ai_ml": [
+      "RAG & GraphRAG",
+      "Local LLMs (Ollama)",
+      "Vector Embeddings",
+      "Retrieval Evaluation",
+      "Structured Outputs",
+      "LightRAG",
+      "NetworkX"
+    ],
+    "hardware_embedded": [
+      "ESP32",
+      "Arduino",
+      "Raspberry Pi",
+      "Circuit Design",
+      "Sensor Integration",
+      "EMG Acquisition"
+    ],
+    "research_lab": [
+      "SERS Chip Fabrication",
+      "Raman Spectroscopy",
+      "Calibration & Validation",
+      "Signal Processing",
+      "SOPs & Technical Reports"
+    ],
+    "do_not_claim": [
+      "FastAPI",
+      "Django",
+      "Flask",
+      "LlamaIndex",
+      "Pinecone",
+      "Kubernetes",
+      "ISO standards"
+    ]
+  },
+  "education": [
+    {
+      "degree": "M.Tech, Medical Technology",
+      "institution": "IIT Jodhpur (Joint with AIIMS Jodhpur)",
+      "period": "2024 - 2026",
+      "score": "CGPA 8.53 / 10 (85.3%)",
+      "division": "First Class"
+    },
+    {
+      "degree": "Master of Computer Applications (MCA)",
+      "institution": "Erode Sengunthar Engineering College",
+      "period": "2022 - 2024",
+      "score": "CGPA 7.20 / 10 (72%)",
+      "division": "First Class"
+    },
+    {
+      "degree": "B.Sc., Information Technology",
+      "institution": "Kongu Arts and Science College",
+      "period": "2019 - 2022",
+      "score": "CGPA 6.90 / 10 (69%)",
+      "division": "First Class"
+    },
+    {
+      "degree": "Higher Secondary (12th)",
+      "institution": "Cheran Hr. Sec. School, Punnam Chathiram, Karur",
+      "period": "2019",
+      "score": "397 / 600 (66.17%)",
+      "division": "First Class"
+    },
+    {
+      "degree": "SSLC (10th)",
+      "institution": "Cheran Hr. Sec. School, Punnam Chathiram, Karur",
+      "period": "2017",
+      "score": "421 / 500 (84.20%)",
+      "division": "First Class"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Junior Research Fellow (JRF)",
+      "organization": "IIT Jodhpur (in collaboration with AIIMS Jodhpur, TCS-funded)",
+      "lab": "Research and Innovations in Multidisciplinary Sensors (RIMS) Group - Prof. Ajay Agarwal",
+      "period": "May 2026 - Nov 2026",
+      "bullets": [
+        "Fabricated SERS chips on silicon via metal-assisted chemical etching with cleanroom Ag/Au sputtering.",
+        "Executed Raman spectroscopic characterization on bacterial markers (LPS, peptidoglycans) for early sepsis detection.",
+        "Authored automated Python pipelines analyzing 120-150 experimental measurement spectra per batch.",
+        "Conducted system calibration, sensor validation, and standardized technical SOPs and research documentation."
+      ]
+    },
+    {
+      "role": "Workshop Instructor",
+      "organization": "KEC College",
+      "period": "2026",
+      "bullets": [
+        "Delivered intensive 4-day hands-on technical training on IoT, embedded systems, Linux, and hardware troubleshooting for 35+ engineering students."
+      ]
+    },
+    {
+      "role": "Website Management Intern",
+      "organization": "Jodhpur City Knowledge and Innovation Foundation (JCKIF)",
+      "period": "Oct 2024 - Mar 2025",
+      "bullets": [
+        "Managed e-commerce web platform catalog, digital product listings, and inventory tracking.",
+        "Handled commercial product photography, digital image enhancement, and site uptime monitoring."
+      ]
+    },
+    {
+      "role": "Software Testing Intern",
+      "organization": "Atos Syntel",
+      "period": "Oct 2022 - Nov 2022",
+      "bullets": [
+        "Formulated test planning, functional test cases, integration, and regression testing in Agile environments with defect tracking."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "IITJ One",
+      "summary": "Official centralized campus mobile platform for IIT Jodhpur, live on Google Play and Apple App Store.",
+      "tech_stack": "React Native (Expo), Next.js, TypeScript, Express, MongoDB, Redis, Socket.IO, Docker, GitHub Actions",
+      "url": "https://iitjone.in",
+      "repo": "https://github.com/Godevs04/IITJ_One",
+      "bullets": [
+        "Published production cross-platform application on Google Play and Apple App Store (launched Aug 2026).",
+        "Engineered real-time notification engine with Socket.IO and high-speed in-memory Redis caching.",
+        "Automated continuous delivery with Docker containerization and GitHub Actions CI/CD pipelines."
+      ]
+    },
+    {
+      "name": "NeoBridge",
+      "summary": "Newborn kangaroo-care temperature & vitals monitoring IoT platform.",
+      "tech_stack": "ESP32, React Native, Hono, Neon Postgres, Vercel",
+      "url": "https://neobridge.vercel.app",
+      "repo": "https://github.com/sukeshperiyasamy/NeoBridge",
+      "bullets": [
+        "Engineered embedded C++ firmware on ESP32 wearable band for real-time thermal telemetry.",
+        "Constructed tri-portal React Native mobile application for mothers, ASHA healthcare workers, and clinical doctors.",
+        "Built serverless backend using Hono and Neon Postgres on Vercel with demo-mode LLM clinical summary layer."
+      ]
+    },
+    {
+      "name": "Doc-RAG",
+      "summary": "Local GraphRAG intelligence system over scientific literature with multi-hop reasoning.",
+      "tech_stack": "Python, Ollama (qwen2.5:3b), FastEmbed, LightRAG, NetworkX",
+      "bullets": [
+        "Constructed knowledge graph encompassing 1,438 document chunks, 15,199 entities, and 7,252 relational edges.",
+        "Attained 100% Recall@5 and 90% Recall@3 over complex multi-hop scientific query benchmarks."
+      ]
+    },
+    {
+      "name": "ADC Exam Prep",
+      "summary": "Comprehensive examination preparation web platform for Australian Dental Council candidates.",
+      "tech_stack": "Next.js, TypeScript, Neon Postgres, Prisma, Stripe, Cashfree",
+      "url": "https://adc-exam-prep-app.vercel.app",
+      "bullets": [
+        "Built responsive full-stack examination portal with dual payment gateway integration (Stripe & Cashfree)."
+      ]
+    },
+    {
+      "name": "NeuroSync",
+      "summary": "Electromyography (EMG) biological signal acquisition pipeline controlling a 3D Unity game in real time.",
+      "tech_stack": "Arduino Uno, BioAmp EXG Pill, C++, Unity, Signal Processing",
+      "bullets": [
+        "Engineered analog-to-digital filtering pipeline for muscle potential acquisition controlling interactive gameplay."
+      ]
+    }
+  ],
+  "certificates": [
+    "AWS Certified Foundations (HCL GUVI, Jun 2023)",
+    "MongoDB Certified Developer (HCL GUVI, May 2023)",
+    "Grand Finale Finalist, Smart India Hackathon (SIH) 2024 (Panipat Institute of Technology, Dec 2024)",
+    "1st Prize, Website Creation, Kongu Arts & Science College (Feb 2022)",
+    "2nd Prize, Code Fighter, Kongu Arts & Science College (Dec 2019)"
+  ]
+}

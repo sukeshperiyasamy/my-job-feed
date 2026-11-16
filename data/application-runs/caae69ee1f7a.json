@@ -1,0 +1,12 @@
+{
+  "application_url": "http://127.0.0.1:52447/form.html",
+  "mode": "approval_required",
+  "status": "Manual Action Required",
+  "screenshot": "C:\\sukesh\\job\\screenshots\\application_caae69ee1f7a_20261116_180802.png",
+  "confirmation_code": null,
+  "error": "Security or CAPTCHA check. Complete it manually in the browser, then Continue.",
+  "events": [],
+  "submission_attempted": false,
+  "portal": "employer",
+  "current_url": "http://127.0.0.1:52447/form.html"
+}

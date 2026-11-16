@@ -1,0 +1,9 @@
+{
+  "auto_submit_domains": [],
+  "max_steps": 12,
+  "session_timeout_minutes": 20,
+  "daily_submission_limit": 15,
+  "llm_field_mapping": false,
+  "llm_model": "",
+  "notes": "No unattended submission is enabled. Per-application dashboard approval permits that job only. Unknown answers, consent, login, and CAPTCHA pause the browser."
+}

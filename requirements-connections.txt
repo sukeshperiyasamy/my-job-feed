@@ -1,0 +1,2 @@
+# Additional dependency for checking ownership of the dedicated browser process.
+psutil>=6,<9

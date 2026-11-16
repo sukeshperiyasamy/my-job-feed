@@ -1,0 +1,11 @@
+{
+  "application_url": "http://127.0.0.1:52447/",
+  "mode": "approval_required",
+  "status": "Failed",
+  "screenshot": "",
+  "confirmation_code": null,
+  "error": "Cannot launch browser",
+  "events": [],
+  "submission_attempted": false,
+  "portal": "employer"
+}

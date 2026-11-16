@@ -1,0 +1,74 @@
+{
+  "application_url": "https://jobs.lever.co/dozee/4ed6edd9-dfec-4f81-89d8-b4232ec36fae/apply",
+  "mode": "approval_required",
+  "status": "Manual Action Required",
+  "screenshot": "C:\\sukesh\\job\\screenshots\\application_f18ccaf92ed2_20261116_180001.png",
+  "confirmation_code": null,
+  "error": "Complete the listed questions or controls in the application browser, then Continue.",
+  "events": [
+    {
+      "step": 1,
+      "url": "https://jobs.lever.co/dozee/4ed6edd9-dfec-4f81-89d8-b4232ec36fae/apply",
+      "filled_fields": [
+        "Resume/CV\n\u2731\nATTACH RESUME/CV",
+        "Full name\n\u2731",
+        "Email\n\u2731",
+        "Phone\n\u2731",
+        "Current location\n\u2731",
+        "GitHub URL"
+      ],
+      "missing_fields": [
+        "Current company\n\u2731",
+        "LinkedIn URL\n\u2731",
+        "Type your response",
+        "0-15 Days",
+        "30 Days",
+        "60 Days",
+        "90 Days",
+        "LinkedIn",
+        "Career Site",
+        "Social Media",
+        "Recruitment Agency",
+        "Employee Referral",
+        "Previous Applicant",
+        "Current location\n\u2731",
+        "cards[9eed0aac-82f9-49e1-b2eb-a2a048adc0fc][field0]",
+        "cards[9eed0aac-82f9-49e1-b2eb-a2a048adc0fc][field1]",
+        "cards[9eed0aac-82f9-49e1-b2eb-a2a048adc0fc][field2]"
+      ]
+    }
+  ],
+  "submission_attempted": false,
+  "portal": "lever",
+  "current_url": "https://jobs.lever.co/dozee/4ed6edd9-dfec-4f81-89d8-b4232ec36fae/apply",
+  "missing_fields": [
+    "Current company\n\u2731",
+    "LinkedIn URL\n\u2731",
+    "Type your response",
+    "0-15 Days",
+    "30 Days",
+    "60 Days",
+    "90 Days",
+    "LinkedIn",
+    "Career Site",
+    "Social Media",
+    "Recruitment Agency",
+    "Employee Referral",
+    "Previous Applicant",
+    "Current location\n\u2731",
+    "cards[9eed0aac-82f9-49e1-b2eb-a2a048adc0fc][field0]",
+    "cards[9eed0aac-82f9-49e1-b2eb-a2a048adc0fc][field1]",
+    "cards[9eed0aac-82f9-49e1-b2eb-a2a048adc0fc][field2]"
+  ],
+  "filled_fields": [
+    "Resume/CV\n\u2731\nATTACH RESUME/CV",
+    "Full name\n\u2731",
+    "Email\n\u2731",
+    "Phone\n\u2731",
+    "Current location\n\u2731",
+    "GitHub URL"
+  ],
+  "field_errors": [],
+  "field_count": 25,
+  "resume_attached": true
+}

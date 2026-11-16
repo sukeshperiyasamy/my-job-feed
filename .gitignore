@@ -31,3 +31,6 @@ htmlcov/
 # Environment files
 .env
 .env.local
+
+# Windows shortcuts
+*.lnk

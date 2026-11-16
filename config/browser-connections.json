@@ -1,0 +1,20 @@
+[
+  {"id":"naukri","name":"Naukri","group":"Job portals","url":"https://www.naukri.com/nlogin/login","usage":"Assisted applications","note":"Sign in or create a candidate account. One-click applications may use the resume saved in Naukri."},
+  {"id":"linkedin","name":"LinkedIn","group":"Job portals","url":"https://www.linkedin.com/login","usage":"Discovery / manual applications","note":"Saved browser session for your use. Automated applications use employer pages."},
+  {"id":"indeed","name":"Indeed","group":"Job portals","url":"https://www.indeed.com/","usage":"Discovery / manual applications","note":"Sign in on the website. Employer application links are used by the project."},
+  {"id":"glassdoor","name":"Glassdoor","group":"Job portals","url":"https://www.glassdoor.co.in/","usage":"Discovery / manual use","note":"Sign in on the website. Account access does not enable automated submissions."},
+  {"id":"hirepro","name":"HirePro employer portal","group":"Employer accounts","url":null,"custom_url_required":true,"usage":"Assisted employer forms","note":"Paste the employer's actual HirePro registration/application link. Accounts may be employer-specific."},
+  {"id":"workday","name":"Workday employer portal","group":"Employer accounts","url":null,"custom_url_required":true,"usage":"Assisted employer forms","note":"Paste a company's candidate portal URL. Each employer may require a separate account."},
+  {"id":"greenhouse","name":"Greenhouse employer form","group":"Employer accounts","url":null,"custom_url_required":true,"usage":"Employer forms","note":"Paste the actual employer job link. Many forms do not require an account."},
+  {"id":"lever","name":"Lever employer form","group":"Employer accounts","url":null,"custom_url_required":true,"usage":"Employer forms","note":"Paste the employer's original job link. Shared candidate login is not assumed."},
+  {"id":"ashby","name":"Ashby employer form","group":"Employer accounts","url":null,"custom_url_required":true,"usage":"Employer forms","note":"Paste an employer application URL; sign-in requirements vary."},
+  {"id":"mercor","name":"Mercor","group":"AI work platforms","url":"https://www.mercor.com/experts/","usage":"Manual sign-up / screening","note":"Use your own account and complete interviews or assessments yourself."},
+  {"id":"turing","name":"Turing","group":"AI work platforms","url":"https://www.turing.com/jobs","usage":"Manual sign-up / screening","note":"Programme eligibility and assessments are managed by the platform."},
+  {"id":"micro1","name":"micro1","group":"AI work platforms","url":"https://www.micro1.ai/","usage":"Manual sign-up / screening","note":"Create or access your account through the official website."},
+  {"id":"outlier","name":"Outlier","group":"AI work platforms","url":"https://app.outlier.ai/","usage":"Manual sign-up / screening","note":"Identity verification, tests and account setup remain manual."},
+  {"id":"upwork","name":"Upwork","group":"Freelance accounts","url":"https://www.upwork.com/","usage":"Manual proposals / account use","note":"Saved login for manual use. The project does not automatically send proposals."},
+  {"id":"fiverr","name":"Fiverr","group":"Freelance accounts","url":"https://www.fiverr.com/","usage":"Manual account use","note":"Manage the account in the project browser; no automated marketplace posting is enabled."},
+  {"id":"freelancer","name":"Freelancer","group":"Freelance accounts","url":"https://www.freelancer.com/","usage":"Manual proposals / account use","note":"Sign in on the website and submit proposals manually."},
+  {"id":"peopleperhour","name":"PeoplePerHour","group":"Freelance accounts","url":"https://www.peopleperhour.com/","usage":"Manual proposals / account use","note":"Saved browser login; no automatic proposal submission."},
+  {"id":"google","name":"Google sign-in","group":"Identity","url":"https://accounts.google.com/","usage":"Manual sign-in for connected websites","note":"Optional project account for sites offering Google sign-in. The project does not read your password or send email."}
+]

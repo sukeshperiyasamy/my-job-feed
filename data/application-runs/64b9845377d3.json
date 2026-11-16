@@ -1,0 +1,24 @@
+{
+  "application_url": "http://127.0.0.1:52447/form.html",
+  "mode": "approval_required",
+  "status": "Pending Approval",
+  "screenshot": "C:\\sukesh\\job\\screenshots\\application_64b9845377d3_20261116_180804.png",
+  "confirmation_code": null,
+  "error": "Application entry button found. Approve before the worker clicks a button that may submit.",
+  "events": [
+    {
+      "step": 1,
+      "url": "http://127.0.0.1:52447/form.html",
+      "filled_fields": [],
+      "missing_fields": []
+    }
+  ],
+  "submission_attempted": false,
+  "portal": "employer",
+  "current_url": "http://127.0.0.1:52447/form.html",
+  "missing_fields": [],
+  "filled_fields": [],
+  "field_errors": [],
+  "field_count": 0,
+  "resume_attached": false
+}
