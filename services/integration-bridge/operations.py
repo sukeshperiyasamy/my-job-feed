@@ -157,7 +157,8 @@ def create_operations(session_factory):
     @router.post('/api/watchlist')
     def add_company(body:CompanyInput):
         values=body.model_dump()
-        values['careers_url']=canonical_url(body.careers_url)
+        try:values['careers_url']=canonical_url(body.careers_url)
+        except ValueError as exc:raise HTTPException(422,str(exc))
         with session_factory() as db:
             if db.query(WatchedCompany).filter_by(careers_url=values['careers_url']).first():raise HTTPException(409,'Company career page already watched.')
             c=WatchedCompany(**values)

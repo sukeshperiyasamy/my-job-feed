@@ -100,6 +100,10 @@ class ApplicationSessions:
             return {'status':'Applying' if command!='cancel' else 'Closing','application_id':application_id}
 
     def _run(self,state,payload,approved,use_saved):
+        def submission_checkpoint(outcome):
+            with self.lock:
+                state['outcome']=outcome
+            self._save(state['id'],{**outcome,'status':'Applying'})
         def pause(outcome):
             self._save(state['id'],outcome)
             with self.lock:
@@ -114,9 +118,10 @@ class ApplicationSessions:
             return command
         try:
             worker=ApplicationEngine(mode='approval_required',browser_profile=payload['profile'],headless=False,shared_browser=True)
-            outcome=worker.run_application(payload['url'],VerifiedFactsStore(),payload['pdf'],payload['cover_letter'],explicit_approval=approved,pause=pause,use_saved_portal_resume=use_saved)
+            outcome=worker.run_application(payload['url'],VerifiedFactsStore(),payload['pdf'],payload['cover_letter'],explicit_approval=approved,pause=pause,use_saved_portal_resume=use_saved,on_submission=submission_checkpoint)
         except Exception as exc:
-            outcome={'status':'Failed','error':str(exc),'submission_attempted':False}
+            attempted=state['outcome'].get('submission_attempted',False)
+            outcome={**state['outcome'],'status':'Manual Action Required' if attempted else 'Failed','error':str(exc),'submission_attempted':attempted}
         try:
             self._save(state['id'],outcome,final=True)
         finally:

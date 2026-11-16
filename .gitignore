@@ -21,6 +21,11 @@ screenshots/
 logs/
 backups/
 
+# Local application runs and account/session metadata
+data/application-runs/
+data/connections/
+data/project-browser.json
+
 # Cache
 __pycache__/
 *.pyc

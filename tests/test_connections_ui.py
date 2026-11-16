@@ -19,6 +19,8 @@ class ConnectionUITests(unittest.TestCase):
             page.goto('http://127.0.0.1:8000/#connections')
             page.locator('#connection-cards .company-card').first.wait_for()
             self.assertGreaterEqual(page.locator('#connection-cards .company-card').count(),18)
+            for name in ['HiringCafe','Wellfound','Himalayas','Y Combinator Jobs','We Work Remotely','Welcome to the Jungle','ZipRecruiter']:
+                self.assertIn(name,page.locator('#connection-cards').inner_text())
             page.locator('#open-project-browser').click()
             self.assertTrue(any(url.endswith('/api/project-browser/open') for url in calls))
             page.locator('[data-open-connection="naukri"]').click()

@@ -8,8 +8,10 @@ from bs4 import BeautifulSoup
 
 def canonical_url(url):
     p=urlsplit(url.strip())
-    if p.scheme not in ['http','https'] or not p.hostname:
-        raise ValueError('Use an HTTP or HTTPS URL.')
+    if p.scheme not in ['http','https'] or not p.hostname or p.username or p.password:
+        raise ValueError('Use an HTTP or HTTPS URL without embedded credentials.')
+    try:p.port
+    except ValueError:raise ValueError('Use a valid website port.')
     query=urlencode(sorted((k,v) for k,v in parse_qsl(p.query) if not k.lower().startswith('utm_') and k.lower() not in ['trk','trackingid','refid']))
     return urlunsplit((p.scheme.lower(),p.netloc.lower(),p.path.rstrip('/') or '/',query,p.fragment if p.fragment.startswith('/') else ''))
 

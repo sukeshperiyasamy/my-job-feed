@@ -44,6 +44,29 @@ class FormWorkerTests(unittest.TestCase):
         self.assertEqual(out['status'],'Submitted')
         self.assertIn('REAL-42',out['confirmation_text'])
         self.assertIsNone(out['confirmation_code'])
+    def test_preparation_mode_never_clicks_one_click_apply_even_with_approval(self):
+        (self.root/'prepare.html').write_text('<button onclick="document.body.innerHTML=\'Application submitted successfully\'">Apply</button>',encoding='utf-8')
+        worker=ApplicationEngine(mode='form_preparation',browser_profile='fixture_worker',headless=True)
+        out=worker.run_application(self.base+'prepare.html',self.facts,str(self.resume),explicit_approval=True)
+        self.assertEqual(out['status'],'Pending Approval')
+        self.assertFalse(out['submission_attempted'])
+    def test_click_failure_preserves_submission_uncertainty(self):
+        from playwright.sync_api import Locator
+        original=Locator.click
+        def click_then_fail(locator,*args,**kwargs):
+            original(locator,*args,**kwargs)
+            raise RuntimeError('Connection lost after click')
+        checkpoints=[]
+        with patch.object(Locator,'click',click_then_fail):
+            out=self.run_form(FORM.format(extra=''),explicit_approval=True,on_submission=checkpoints.append)
+        self.assertEqual(out['status'],'Manual Action Required')
+        self.assertTrue(out['submission_attempted'])
+        self.assertEqual(len(checkpoints),1)
+        self.assertTrue(checkpoints[0]['submission_attempted'])
+    def test_uncertain_apply_does_not_clear_attempt_when_inputs_appear(self):
+        out=self.run_form('<button onclick="document.body.innerHTML=\'<label>Email<input type=email></label><button>Apply</button>\'">Apply</button>',explicit_approval=True)
+        self.assertEqual(out['status'],'Manual Action Required')
+        self.assertTrue(out['submission_attempted'])
     def test_unknown_experience_and_consent_not_guessed(self):
         extra='<label for="exp">Years of relevant experience</label><input id="exp" required><label for="consent">I agree to the terms</label><input id="consent" type="checkbox" required>'
         out=self.run_form(FORM.format(extra=extra),explicit_approval=True)

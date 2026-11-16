@@ -160,10 +160,15 @@ class ApplicationEngine:
                         return item
         return None
 
-    def run_application(self,application_url,facts,resume_pdf_path,cover_letter='',explicit_approval=False,pause=None,use_saved_portal_resume=False):
+    def run_application(self,application_url,facts,resume_pdf_path,cover_letter='',explicit_approval=False,pause=None,use_saved_portal_resume=False,on_submission=None):
         result={'application_url':application_url,'mode':self.mode,'status':'Failed','screenshot':'','confirmation_code':None,'error':None,'events':[], 'submission_attempted':False}
         run_id=uuid.uuid4().hex[:12]
         page=None
+        def submission_checkpoint():
+            # A click can reach the server even if Playwright subsequently times out.
+            result['submission_attempted']=True
+            if on_submission:
+                on_submission(dict(result))
         def evidence():
             try:
                 result['screenshot']=self.browser_manager.capture_screenshot('application_'+run_id)
@@ -242,10 +247,13 @@ class ApplicationEngine:
                     entry=self._button(page,re.compile(r'^(apply for this (?:job|position)|apply for (?:job|position)|apply on company (?:site|website)|apply externally)$',re.I))
                     if entry:
                         href=entry.get_attribute('href')
-                        if not explicit_approval and not (href and not href.startswith(('#','javascript:'))):
+                        safe_link=bool(href and not href.startswith(('#','javascript:')))
+                        if not safe_link and (self.mode=='form_preparation' or not explicit_approval):
                             if wait('Pending Approval','Application entry button found. Approve before the worker clicks a button that may submit.'):
                                 continue
                             return result
+                        if not safe_link:
+                            submission_checkpoint()
                         entry.click(timeout=5000)
                         page.wait_for_timeout(800)
                         continue
@@ -257,17 +265,18 @@ class ApplicationEngine:
                             continue
                         return result
                     if final and current_portal['id']!='naukri':
-                        if not (explicit_approval or (urlsplit(page.url).hostname or '').lower() in self.policy.get('auto_submit_domains',[])):
+                        self.policy=load_json('application-policy.json',self.policy)
+                        if self.mode=='form_preparation' or not (explicit_approval or (urlsplit(page.url).hostname or '').lower() in self.policy.get('auto_submit_domains',[])):
                             if wait('Pending Approval','Apply button found. Approve to open the application flow.'):
                                 continue
                             return result
+                        if result['submission_attempted']:
+                            result.update(status='Manual Action Required',error='Previous Apply click needs portal verification before another submission.')
+                            return result
+                        submission_checkpoint()
                         final.click(timeout=5000)
-                        result['submission_attempted']=True
                         page.wait_for_timeout(900)
                         if self._confirmation(page):
-                            continue
-                        if page.locator('input:not([type="hidden"]),textarea,select').count():
-                            result['submission_attempted']=False
                             continue
                         wait('Manual Action Required','The Apply flow changed. Check whether the portal accepted the application. The button will not be retried automatically.')
                         return result
@@ -282,8 +291,8 @@ class ApplicationEngine:
                     if result['submission_attempted']:
                         result.update(status='Manual Action Required',error='Submission attempted but confirmation uncertain. Verify the portal before retrying.')
                         return result
+                    submission_checkpoint()
                     final.click(timeout=5000)
-                    result['submission_attempted']=True
                     try:
                         page.wait_for_function("()=>/application (has been |was |is )?(successfully )?(submitted|received)|successfully applied|thank you for applying/i.test(document.body.innerText)",timeout=10000)
                     except Exception:

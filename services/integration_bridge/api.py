@@ -143,9 +143,9 @@ def get_dashboard_overview():
             "applications_submitted": submitted,
             "failed_applications": failed,
             "system_health": "Operational",
-            "active_workers": 1,
-            "ai_engine": "Antigravity CLI (agy v1.5.9) + LM Studio Fallback",
-            "browser_engine": "Playwright Chromium (Edge/Chrome isolate)"
+            "active_workers": int(application_sessions.active is not None),
+            "ai_engine": "Codex CLI → Antigravity CLI → LM Studio → deterministic fallback (configured order)",
+            "browser_engine": "Playwright with persistent project Edge/Chrome profile"
         }
     finally:
         db.close()
@@ -224,6 +224,9 @@ def score_and_tailor_job(job_id: int):
         job = db.query(Job).filter(Job.id == job_id).first()
         if not job:
             raise HTTPException(status_code=404, detail="Job not found")
+        existing_app = db.query(Application).filter(Application.job_id == job.id).first()
+        if existing_app and existing_app.state in [ApplicationState.APPLYING, ApplicationState.SUBMITTED]:
+            raise HTTPException(409, "Cannot replace application documents while applying or after submission.")
 
         facts = VerifiedFactsStore()
         resume = db.query(Resume).filter(Resume.is_active == True).first()
@@ -241,11 +244,8 @@ def score_and_tailor_job(job_id: int):
 
         # Also maintain compatibility alias
         compat_path = f"C:/sukesh/job/data/generated-pdfs/job_{job.id}_tailored.pdf"
-        try:
-            import shutil
-            shutil.copy2(pdf_path, compat_path)
-        except Exception:
-            pass
+        import shutil
+        shutil.copy2(pdf_path, compat_path)
 
         # A conservative cover letter uses the verified summary without invented claims.
         cover_letter = f"Dear Hiring Team,\n\nI am applying for the {job.title} position at {job.company_name}.\n\n{facts.summary}\n\nPlease find my tailored resume attached. I would welcome the opportunity to discuss my experience and this role.\n\nSincerely,\n{facts.full_name}"

@@ -2,6 +2,12 @@
 from urllib.parse import urlsplit
 
 PORTALS = [
+    {"id":"hiringcafe","name":"HiringCafe","domains":["hiringcafe.com","hiring.cafe"],"search":False,"application":"employer_link","note":"Browser connection available. Browse on the website and import the original employer application URL; no public-search collector is enabled."},
+    {"id":"wellfound","name":"Wellfound","domains":["wellfound.com"],"search":False,"application":"employer_link","note":"Browser sign-in and manual candidate applications. Check Hires Remotely From; automated applications require an employer page."},
+    {"id":"himalayas","name":"Himalayas","domains":["himalayas.app"],"search":False,"application":"employer_link","note":"Browser connection for remote discovery. Check country/timezone eligibility; no automatic search feed is enabled."},
+    {"id":"ycombinator","name":"Y Combinator Jobs","domains":["ycombinator.com","workatastartup.com"],"search":False,"application":"employer_link","note":"Startup candidate account in the project browser. Native board applications remain manual; use employer links for supported automation."},
+    {"id":"weworkremotely","name":"We Work Remotely","domains":["weworkremotely.com"],"search":False,"application":"employer_link","note":"Browser connection for remote discovery. Review region/access requirements on the site and use the original employer application link."},
+    {"id":"welcome-to-the-jungle","name":"Welcome to the Jungle","domains":["welcometothejungle.com"],"search":False,"application":"employer_link","note":"Browser sign-in and manual discovery. No automatic native application adapter or search collector is enabled."},
     {"id":"ai-work-accounts","name":"AI-training account platforms","domains":["mercor.com","turing.com","micro1.ai","outlier.ai"],"search":False,"application":"manual","note":"Use Connections for saved sign-in. Sign-up, identity checks, assessments and interviews remain manual."},
     {"id":"freelance-accounts","name":"Freelance marketplace accounts","domains":["upwork.com","fiverr.com","freelancer.com","peopleperhour.com"],"search":False,"application":"manual","note":"Use Connections for saved sign-in. Marketplace proposals and posting remain manual."},
     {"id":"canonical","name":"Canonical application policy","domains":["canonical.com"],"search":False,"application":"manual","note":"Review each role's application policy. The reviewed graduate form disallows AI-generated answers; use manual applications."},

@@ -8,7 +8,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from fastapi import APIRouter,HTTPException
 from fastapi.responses import FileResponse,HTMLResponse
-from pydantic import BaseModel,Field
+from pydantic import BaseModel,Field,field_validator
 from services.browser_manager.project_browser import project_browser
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -20,6 +20,12 @@ class ConnectionCreate(BaseModel):
     url:str
     group:str='Employer accounts'
 
+    @field_validator('name')
+    @classmethod
+    def nonblank_name(cls,value):
+        if not value.strip():raise ValueError('Enter an account name.')
+        return value.strip()
+
 class OpenConnection(BaseModel):
     url:str|None=None
 
@@ -27,6 +33,8 @@ def valid_url(url):
     p=urlsplit(url.strip())
     if p.scheme not in ['http','https'] or not p.hostname or p.username or p.password:
         raise ValueError('Use the website URL without embedded usernames or passwords.')
+    try:p.port
+    except ValueError:raise ValueError('Use a valid website port.')
     if p.hostname in ['localhost','127.0.0.1','::1']:
         raise ValueError('Choose an external account website, not a local service.')
     return url.strip()
@@ -111,7 +119,7 @@ def create_connections_router():
 
     @router.get('/connect/{connection_id}',response_class=HTMLResponse)
     def connection_link(connection_id:str):
-        if not re.fullmatch(r'[a-z0-9-]+',connection_id) or not any(r['id']==connection_id for r in connection_list()):raise HTTPException(404,'Connection not found.')
+        if not re.fullmatch(r'[a-z0-9_-]+',connection_id) or not any(r['id']==connection_id for r in connection_list()):raise HTTPException(404,'Connection not found.')
         # A normal GET/link preview never launches a browser; the user's button sends the action.
         return f'''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Open project account</title><link rel="stylesheet" href="/dashboard-assets/app.css"><body><div class="content" style="max-width:650px;margin:70px auto"><div class="panel"><div class="aside-body"><div class="eyebrow">JOB HUNTER PROJECT BROWSER</div><h1>Open your saved account.</h1><p>This opens the website in the browser profile reserved for this project.</p><button class="btn primary" id="open">Open in project browser</button><p id="result" role="status"></p><a href="/#connections">Manage connections →</a></div></div></div><script>document.getElementById('open').onclick=async function(){{this.disabled=true;try{{let r=await fetch('/api/connections/{connection_id}/open',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:'{{}}'}});let d=await r.json();document.getElementById('result').textContent=d.detail||d.status;}}catch(e){{document.getElementById('result').textContent=e.message;}}finally{{this.disabled=false;}}}};</script></body></html>'''
     return router

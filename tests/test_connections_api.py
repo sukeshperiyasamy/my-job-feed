@@ -36,14 +36,27 @@ class ConnectionTests(unittest.TestCase):
     def test_get_link_does_not_launch_browser(self):
         self.assertEqual(self.client.get('/connect/naukri').status_code,200)
         self.mock.open_url.assert_not_called()
+    def test_requested_job_boards_have_project_browser_links(self):
+        rows={r['id']:r for r in self.client.get('/api/connections').json()['connections']}
+        expected={'hiringcafe','wellfound','himalayas','ycombinator','weworkremotely','welcome-to-the-jungle','zip_recruiter'}
+        self.assertTrue(expected<=set(rows))
+        for key in expected:
+            self.assertEqual(rows[key]['group'],'Job portals')
+            self.assertEqual(self.client.get('/connect/'+key).status_code,200)
+            self.assertEqual(self.client.post('/api/connections/'+key+'/open',json={}).status_code,200)
+            self.mock.open_url.assert_called_with(rows[key]['url'])
+        portals={r['id']:r for r in self.client.get('/api/portals').json()}
+        self.assertTrue(portals['zip_recruiter']['search_available'])
+        self.assertTrue(all(not portals[key]['search_available'] for key in expected-{'zip_recruiter'}))
     def test_employer_account_needs_specific_url(self):
         self.assertEqual(self.client.post('/api/connections/hirepro/open',json={}).status_code,422)
         created=self.client.post('/api/connections',json={'name':'Example employer','url':'https://example.com/candidate','group':'Employer accounts'}).json()
         self.assertEqual(self.client.post('/api/connections/'+created['id']+'/open',json={}).status_code,200)
         self.mock.open_url.assert_called_once_with('https://example.com/candidate')
     def test_url_credentials_and_executable_schemes_rejected(self):
-        for url in ['javascript:alert(1)','file:///C:/Windows','https://name:password@example.com','http://localhost:9223']:
+        for url in ['javascript:alert(1)','file:///C:/Windows','https://name:password@example.com','http://localhost:9223','https://example.com:notaport']:
             self.assertEqual(self.client.post('/api/connections',json={'name':'Invalid','url':url}).status_code,422)
+        self.assertEqual(self.client.post('/api/connections',json={'name':'   ','url':'https://example.com'}).status_code,422)
     def test_alternate_url_cannot_launch_before_validation(self):
         self.assertEqual(self.client.post('/api/connections/naukri/open',json={'url':'https://another.example.com'}).status_code,409)
         self.mock.open_url.assert_not_called()

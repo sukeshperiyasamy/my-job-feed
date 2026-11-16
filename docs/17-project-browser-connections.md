@@ -16,6 +16,8 @@ HirePro and Workday often require separate accounts per employer. Use **Add empl
 
 The Connections page includes job portals, employer forms, AI-training sites and freelance accounts. These are browser-session connections, not OAuth/API integrations. Account access does not imply an automation adapter exists or permit an application/proposal. Existing submission approval gates remain unchanged. Marketplace proposals, platform assessments and sign-ups remain manual.
 
+HiringCafe, Wellfound, Himalayas, Y Combinator Jobs (Work at a Startup), We Work Remotely, Welcome to the Jungle and ZipRecruiter are included. HiringCafe's older `hiring.cafe` address currently redirects to `hiringcafe.com`. ZipRecruiter already has a JobSpy public-search option; the other six additions provide project-browser access and source-directory links, not newly implemented automatic collectors or native application adapters. Verify each role's country eligibility independently.
+
 ## Direct links and shortcuts
 
 The dashboard offers **Copy connection link**. A link such as `http://127.0.0.1:8000/connect/naukri` displays an explicit button that opens the account in the dedicated project browser. GET requests and link previews do not launch browsers. The project browser's home page is `/project-browser`.
