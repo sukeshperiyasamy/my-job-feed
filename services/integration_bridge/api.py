@@ -18,15 +18,18 @@ sys.path.insert(0, "C:/sukesh/job")
 from services.integration_bridge.models import (
     Base, Job, Resume, GeneratedDocument, Application,
     ApplicationAttempt, ApplicationState, ApplicationMode,
-    JobSource, ExecutionLog
+    JobSource, ExecutionLog, JobVerification
 )
 from services.resume_engine.engine import VerifiedFactsStore, match_job_with_llm, generate_ats_pdf
 from services.resume_engine.template_builder import generate_resume_filename
 from services.application_engine.engine import ApplicationEngine
 from services.integration_bridge.operations import create_operations
 from services.job_collector.careers import canonical_url
+from services.job_collector.matching import assess_job,campaign_config
 from services.integration_bridge.opportunities import catalog_router
 from services.integration_bridge.connections import create_connections_router
+from services.integration_bridge.application_profile import profile_router
+from services.integration_bridge.freelancing import freelance_router
 
 DATABASE_PATH = os.environ.get("JOB_HUNTER_DATABASE", "C:/sukesh/job/database/ai_job_hunter.db")
 Path(DATABASE_PATH).parent.mkdir(parents=True, exist_ok=True)
@@ -113,7 +116,9 @@ class ApprovalDecisionSchema(BaseModel):
 operations_router, application_sessions = create_operations(SessionLocal)
 app.include_router(operations_router)
 app.include_router(catalog_router(SessionLocal))
+app.include_router(freelance_router(SessionLocal))
 app.include_router(create_connections_router())
+app.include_router(profile_router(application_sessions))
 
 @app.get("/health")
 def health_check():
@@ -151,7 +156,7 @@ def get_dashboard_overview():
         db.close()
 
 @app.get("/api/jobs")
-def list_jobs(status: Optional[str] = None, limit: int = Query(50, ge=1, le=1000)):
+def list_jobs(status: Optional[str] = None, limit: int = Query(50, ge=1, le=1000), eligibility: Optional[str] = None, campaign: Optional[str] = None):
     db = SessionLocal()
     try:
         q = db.query(Job)
@@ -159,7 +164,12 @@ def list_jobs(status: Optional[str] = None, limit: int = Query(50, ge=1, le=1000
             q = q.filter(Job.status == status)
         jobs = q.order_by(Job.discovery_date.desc()).limit(limit).all()
         results = []
+        screening_config=campaign_config()
+        verifications={v.job_id:v for v in db.query(JobVerification).filter(JobVerification.job_id.in_([j.id for j in jobs])).all()}
         for j in jobs:
+            screening=assess_job(j.title,j.description,j.location,screening_config)
+            if eligibility and screening['status']!=eligibility:continue
+            if campaign and campaign not in [c['id'] for c in screening['campaigns']]:continue
             clean_name = generate_resume_filename("Sukesh Periyasamy", j.title, j.company_name, "pdf")
             pdf_disk_path = Path(f"C:/sukesh/job/data/generated-pdfs/{clean_name}")
             compat_disk_path = Path(f"C:/sukesh/job/data/generated-pdfs/job_{j.id}_tailored.pdf")
@@ -180,6 +190,10 @@ def list_jobs(status: Optional[str] = None, limit: int = Query(50, ge=1, le=1000
                 "salary_min": j.salary_min, "salary_max": j.salary_max, "salary_currency": j.salary_currency,
                 "match_score": j.match_score,
                 "match_reason": j.match_reason,
+                "screening": screening,
+                "availability": {'status':verifications[j.id].availability,'checked_at':verifications[j.id].checked_at.isoformat() if verifications[j.id].checked_at else None,'reason':verifications[j.id].reason} if j.id in verifications else {'status':'unchecked'},
+                "source_attribution": {'name':verifications[j.id].source_name,'url':verifications[j.id].source_url,'provider':verifications[j.id].provider} if j.id in verifications and verifications[j.id].source_name else None,
+                "discovery_evidence": (verifications[j.id].details or {}).get('freehire') if j.id in verifications else None,
                 "status": j.status.value if hasattr(j.status, 'value') else str(j.status),
                 "pdf_filename": actual_filename if has_pdf else None,
                 "cover_letter_url": f"/pdfs/{Path(actual_filename).with_suffix(chr(46)+"txt").name}" if has_pdf and Path(f"C:/sukesh/job/data/generated-pdfs/{actual_filename}").with_suffix(".txt").exists() else None,

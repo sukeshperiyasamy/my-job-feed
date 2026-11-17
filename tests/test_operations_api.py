@@ -5,6 +5,7 @@ import tempfile
 import unittest
 import threading
 import time
+from datetime import datetime
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 TEMP=tempfile.TemporaryDirectory()
@@ -79,6 +80,40 @@ class OperationsTests(unittest.TestCase):
             self.assertEqual(self.client.post('/api/applications/decide',json={'application_id':aid,'decision':decision}).status_code,409)
     def test_invalid_decision_rejected(self):
         self.assertEqual(self.client.post('/api/applications/decide',json={'application_id':1,'decision':'banana'}).status_code,422)
+    def test_campaign_configuration_and_invalid_requests(self):
+        config=self.client.get('/api/search-campaigns').json()
+        self.assertEqual(len(config['campaigns']),7)
+        self.assertGreater(config['total_searches'],12)
+        for body in [{'campaign_ids':['unknown']},{'sites':['hirepro']},{'max_searches':25}]:
+            self.assertEqual(self.client.post('/api/search-campaigns/run',json=body).status_code,422)
+    def test_campaign_rotation_saves_salary_date_and_reports_failure(self):
+        def wait_done():
+            for _ in range(100):
+                result=self.client.get('/api/collection/status').json()
+                if result['status']!='Running':return result
+                time.sleep(.02)
+            self.fail('Campaign fixture did not finish')
+        record={'canonical_url':'https://example.com/campaign-fixture','title':'Junior Firmware Engineer','company_name':'Fixture','location':'Chennai','description':'0–2 years experience. ESP32.','salary_min':600000,'salary_max':900000,'salary_currency':'INR','posting_date':datetime(2026,11,15)}
+        with patch('services.job_collector.collector.run_jobspy_discovery',return_value=[record]) as collector:
+            first=self.client.post('/api/search-campaigns/run',json={'campaign_ids':['embedded'],'max_searches':1})
+            self.assertEqual(first.status_code,200)
+            done=wait_done()
+            self.assertEqual(done['next_search_offset'],1)
+            self.assertEqual(collector.call_args.kwargs['location'],'Bengaluru')
+        with SessionLocal() as db:
+            job=db.query(Job).filter_by(canonical_url=record['canonical_url']).one()
+            self.assertEqual(job.salary_min,600000)
+            self.assertEqual(job.posting_date,record['posting_date'])
+        rows=self.client.get('/api/jobs?eligibility=potential_match&campaign=embedded&limit=1000').json()
+        self.assertTrue(any(j['canonical_url']==record['canonical_url'] for j in rows))
+        self.assertTrue(all(j['screening']['status']=='potential_match' for j in rows))
+        with patch('services.job_collector.collector.run_jobspy_discovery',side_effect=RuntimeError('Fixture blocked')):
+            second=self.client.post('/api/search-campaigns/run',json={'campaign_ids':['embedded'],'max_searches':1}).json()
+            self.assertEqual(second['start_search_offset'],1)
+            done=wait_done()
+            self.assertEqual(done['status'],'Completed with warnings')
+            self.assertEqual(done['new_jobs'],0)
+            self.assertIn('Fixture blocked',done['results'][0]['error'])
     def test_external_browser_origin_cannot_trigger_application(self):
         response=self.client.post('/api/applications/decide',headers={'Origin':'https://untrusted.example'},json={'application_id':1,'decision':'approve'})
         self.assertEqual(response.status_code,403)

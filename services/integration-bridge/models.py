@@ -184,3 +184,28 @@ class WatchedCompany(Base):
     last_error = Column(Text, nullable=True)
     last_new_jobs = Column(Integer, default=0)
     details = Column(JSON, nullable=True)
+
+class FreelanceLead(Base):
+    __tablename__ = "freelance_leads"
+    id = Column(Integer, primary_key=True)
+    title = Column(String(200), nullable=False)
+    url = Column(String(2048), unique=True, nullable=False)
+    platform = Column(String(120), default="Direct client")
+    service = Column(String(100), default="Python & automation")
+    budget = Column(String(200), default="Undisclosed")
+    description = Column(Text, default="")
+    proposal = Column(Text, default="")
+    status = Column(String(40), default="Saved")
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+class JobVerification(Base):
+    __tablename__ = "job_verifications"
+    job_id = Column(Integer, ForeignKey("jobs.id"), primary_key=True)
+    provider = Column(String(80), nullable=True)
+    source_name = Column(String(200), nullable=True)
+    source_url = Column(String(2048), nullable=True)
+    collected_at = Column(DateTime, nullable=True)
+    availability = Column(String(30), default="unchecked", nullable=False)
+    checked_at = Column(DateTime, nullable=True)
+    reason = Column(Text, nullable=True)
+    details = Column(JSON, default=dict)

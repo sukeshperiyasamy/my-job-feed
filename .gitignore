@@ -13,6 +13,7 @@ database/*.sqlite3
 
 # Third-party nested apps
 apps/
+/ai-job-search/
 node_modules/
 
 # Browser profiles & screenshots
@@ -24,9 +25,12 @@ backups/
 # Local application runs and account/session metadata
 data/application-runs/
 data/connections/
+data/application-profile/
+data/career-ops/
 data/project-browser.json
 
 # Cache
+data/extended-search/
 __pycache__/
 *.pyc
 .pytest_cache/

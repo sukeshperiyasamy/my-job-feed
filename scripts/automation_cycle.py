@@ -28,14 +28,19 @@ def cycle(score_new=False):
     if previous.get('status')=='Running':wait_collection()
     request('POST','/api/watchlist/check')
     summary['watchlist']=wait_collection()
-    for location in ['Chennai','Bengaluru','Visakhapatnam']:
-        request('POST','/api/discovery/run',{'search_term':'Biomedical Engineer','location':location,'sites':['naukri'],'results_wanted':10})
-        summary['discovery'].append({'location':location,**wait_collection()})
+    request('POST','/api/search-campaigns/run',{'max_searches':12,'sites':['naukri'],'results_wanted':10})
+    summary['discovery'].append(wait_collection())
+    # Read-only broader discovery: failures remain visible without preventing other sources.
+    try:
+        request('POST','/api/extended-search/run',{'max_searches':6,'results_per_search':25,'days':30})
+        summary['discovery'].append(wait_collection())
+    except Exception as exc:
+        summary['discovery'].append({'source':'FreeHire','error':str(exc)})
     if score_new:
         jobs=request('GET','/api/jobs?limit=1000')
         # Prioritize technical titles relevant to the verified profile. Scoring is not an application approval.
         keywords=['biomedical','medical device','firmware','embedded','software','python','research','sensor','validation','rag','full stack','react native']
-        candidates=[j for j in jobs if j.get('match_score') is None and any(k in j['title'].lower() for k in keywords)]
+        candidates=[j for j in jobs if j.get('match_score') is None and j.get('availability',{}).get('status')!='expired' and j.get('screening',{}).get('status')!='outside_target' and any(k in j['title'].lower() for k in keywords)]
         for job in candidates[:3]:
             try:
                 outcome=request('POST',f"/api/jobs/{job['id']}/score")

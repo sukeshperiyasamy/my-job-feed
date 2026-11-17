@@ -14,6 +14,7 @@ from services.application_engine.sessions import ApplicationSessions
 from services.application_engine.portals import PORTALS
 from services.application_engine.form_worker import load_json
 from services.job_collector.careers import canonical_url, collect_careers
+from services.job_collector.matching import campaign_config,search_plan
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -39,6 +40,12 @@ class CompanyInput(BaseModel):
 class CompanyUpdate(BaseModel):
     enabled:bool
 
+class CampaignRun(BaseModel):
+    campaign_ids:list[str]=Field(default_factory=list,max_length=7)
+    sites:list[str]=Field(default_factory=lambda:['naukri'],min_length=1,max_length=2)
+    max_searches:int=Field(default=12,ge=1,le=24)
+    results_wanted:int=Field(default=10,ge=1,le=30)
+
 class AnswersInput(BaseModel):
     answers:dict[str,str|bool|int|float]
 
@@ -62,20 +69,25 @@ def create_operations(session_factory):
             for data in records:
                 url=canonical_url(data['canonical_url'])
                 if db.query(Job).filter(Job.canonical_url==url).first():continue
-                db.add(Job(canonical_url=url,title=data['title'],company_name=data['company_name'],location=data.get('location'),description=data.get('description',''),source=data.get('source','company_careers'),work_arrangement=data.get('work_arrangement','Not specified'),status=ApplicationState.DISCOVERED))
+                db.add(Job(canonical_url=url,title=data['title'],company_name=data['company_name'],location=data.get('location'),description=data.get('description',''),source=data.get('source','company_careers'),work_arrangement=data.get('work_arrangement','Not specified'),salary_min=data.get('salary_min'),salary_max=data.get('salary_max'),salary_currency=data.get('salary_currency'),posting_date=data.get('posting_date'),source_job_id=data.get('source_job_id'),status=ApplicationState.DISCOVERED))
                 try:
                     db.commit()
                     created+=1
                 except IntegrityError:
                     db.rollback()
         return created
-    def start_task(kind,work):
+    def start_task(kind,work,metadata=None):
         with task_lock:
             if not scan_lock.acquire(blocking=False):
                 raise HTTPException(409,'A collection run is already active. Wait for it to finish.')
             task={'id':uuid.uuid4().hex,'kind':kind,'status':'Running','started_at':datetime.now(timezone.utc).isoformat(),'new_jobs':0,'results':[]}
+            task.update(metadata or {})
             tasks[task['id']]=task
-            log_task(task)
+            try:log_task(task)
+            except Exception:
+                tasks.pop(task['id'],None)
+                scan_lock.release()
+                raise
         def run():
             try:
                 work(task)
@@ -84,8 +96,8 @@ def create_operations(session_factory):
                 task.update(status='Failed',error=str(exc))
             finally:
                 task['finished_at']=datetime.now(timezone.utc).isoformat()
-                log_task(task)
-                scan_lock.release()
+                try:log_task(task)
+                finally:scan_lock.release()
         threading.Thread(target=run,daemon=True).start()
         return task
 
@@ -222,6 +234,36 @@ def create_operations(session_factory):
             if task['status']=='Running':task.update(status='Interrupted',error='Service restarted. Start collection again.')
             return task
 
+    @router.get('/api/search-campaigns')
+    def campaigns():
+        config=campaign_config()
+        return {**config,'total_searches':len(search_plan(config)),'note':'Rotating public-search batches; research-board search is discovery, not official-source verification.'}
+
+    @router.post('/api/search-campaigns/run')
+    def run_campaigns(body:CampaignRun):
+        available={p['id'] for p in portals() if p['search_available']}
+        if not set(body.sites)<=available:raise HTTPException(422,'Choose portals with public-search support.')
+        try:plan=search_plan(campaign_config(),body.campaign_ids)
+        except ValueError as exc:raise HTTPException(422,str(exc))
+        key='|'.join(sorted(set(body.campaign_ids))) or 'all'
+        key+=':'+','.join(sorted(set(body.sites)))
+        with session_factory() as db:
+            last=db.query(ExecutionLog).filter(ExecutionLog.service=='collection',ExecutionLog.details['campaign_key'].as_string()==key).order_by(ExecutionLog.id.desc()).first()
+            offset=int(last.details.get('next_search_offset',0))%len(plan) if last else 0
+        batch=[plan[(offset+i)%len(plan)] for i in range(min(body.max_searches,len(plan)))]
+        def collect(task):
+            from services.job_collector.collector import run_jobspy_discovery
+            for i,item in enumerate(batch):
+                for site in dict.fromkeys(body.sites):
+                    try:
+                        records=run_jobspy_discovery(search_term=item['search_term'],location=item['location'],sites=[site],results_wanted=body.results_wanted,raise_errors=True)
+                        created=save_jobs(records);task['new_jobs']+=created
+                        task['results'].append({**item,'name':f"{item['campaign']} / {item['location']} / {site}",'found':len(records),'new_jobs':created,'status':'Collected' if records else 'No public results; availability not confirmed.'})
+                    except Exception as exc:task['results'].append({**item,'name':f"{item['campaign']} / {item['location']} / {site}",'error':str(exc)})
+                task['next_search_offset']=(offset+i+1)%len(plan)
+                log_task(task)
+        return start_task('campaigns',collect,{'campaign_key':key,'searches_planned':len(batch),'total_searches':len(plan),'next_search_offset':offset,'start_search_offset':offset})
+
     @router.post('/api/applications/decide')
     def decide(body:Decision):
         try:
@@ -241,4 +283,8 @@ def create_operations(session_factory):
                 return {'status':record.state.value}
         except ValueError as exc:raise HTTPException(409,str(exc))
 
+    from services.integration_bridge.career_ops_api import create_career_ops_router
+    router.include_router(create_career_ops_router(session_factory,start_task))
+    from services.integration_bridge.extended_search import extended_router
+    router.include_router(extended_router(session_factory,start_task))
     return router,runner

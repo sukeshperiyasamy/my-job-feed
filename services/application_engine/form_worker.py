@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 import requests
 from services.browser_manager.browser import DedicatedBrowserManager
 from services.application_engine.portals import portal_for_url
+from services.application_engine import answer_store
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -51,13 +52,32 @@ class ApplicationEngine:
 
     def fill_form(self, page, facts, resume_path, cover_letter=''):
         known = self._facts(facts)
+        for key,label in {'full_name':'Full name','email':'Email address','phone':'Phone number','location':'Current location','linkedin':'LinkedIn URL','github':'GitHub URL'}.items():
+            saved=answer_store.find_answer(label,page.url)
+            if saved and not saved.get('skip') and isinstance(saved.get('value'),str) and saved['value'].strip():known[key]=saved['value']
+        parts=known['full_name'].split()
+        known.update(first_name=parts[0] if parts else '',last_name=' '.join(parts[1:]))
         answers = {normalize(k):v for k,v in load_json('application-answers.json', {}).get('answers', {}).items()}
         missing, filled, errors = [], [], []
         field_count, resume_attached = 0, False
+        def ask(field,options=None):
+            answer_store.record_question(field['label'] or 'Unlabelled field',page.url,
+                field['type'] if field['type'] in ['checkbox','radio','file'] else 'select' if field['tag']=='select' else 'text',
+                field['required'],options or field.get('options'))
+            missing.append(field['label'] or 'Unlabelled field')
         for frame in page.frames:
             controls = frame.locator('input,select,textarea')
             try:
                 fields = controls.evaluate_all(FIELDS_JS)
+                # A radio group's legend is the question; option labels are answers.
+                for f in fields:
+                    if f['type']=='radio':
+                        f['option_label']=controls.nth(f['index']).evaluate("e=>[...(e.labels||[])].map(l=>l.innerText).join(' ')")
+                        legend=controls.nth(f['index']).evaluate("e=>e.closest('fieldset')?.querySelector('legend')?.innerText||e.closest('[role=radiogroup]')?.getAttribute('aria-label')||e.closest('.application-question')?.querySelector('.application-label')?.innerText||e.name||''")
+                        if legend:f['label']=legend
+                for f in fields:
+                    if f['type']=='radio' and f['name']:
+                        f['required']=any(r['required'] for r in fields if r['type']=='radio' and r['name']==f['name'])
             except Exception:
                 continue
             for f in fields:
@@ -67,6 +87,9 @@ class ApplicationEngine:
                 control = controls.nth(f['index'])
                 label = f['label'] or 'Unlabelled field'
                 text = normalize(label)
+                saved=answer_store.find_answer(label,page.url,f['type'])
+                answer=saved['value'] if saved else answers.get(text)
+                skip=bool(saved and saved.get('skip') and not f['required'])
                 try:
                     if f['type'] == 'password':
                         missing.append('Login required — enter credentials in the application browser')
@@ -81,17 +104,24 @@ class ApplicationEngine:
                             filled.append(label)
                         elif f['required']:
                             missing.append(label+' (document required)')
+                            answer_store.record_question(label,page.url,'file',True)
                         continue
                     if f['type'] in ['checkbox','radio']:
-                        answer = answers.get(text)
+                        if skip:continue
                         if f['type'] == 'checkbox' and isinstance(answer,bool):
                             control.set_checked(answer,timeout=2000)
-                        if f['type'] == 'radio' and isinstance(answer,str) and normalize(answer)==normalize(f['value']):
+                        elif f['type']=='checkbox' and not f['checked']:
+                            ask(f)
+                        if f['type'] == 'radio' and answer is not None and answer_store.normalize(answer)==answer_store.normalize(f['value']):
                             control.check(timeout=2000)
+                        if f['type']=='radio':
+                            group=[r for r in fields if r['type']=='radio' and (r['name']==f['name'] if f['name'] else r['index']==f['index'])]
+                            if (answer is None or answer_store.normalize(answer) not in [answer_store.normalize(r['value']) for r in group]) and not any(r['checked'] for r in group):
+                                ask(f,[{'value':r['value'],'text':r.get('option_label') or r['value']} for r in group])
                         continue
                     if f['value'].strip() and not (f['tag']=='select' and re.match(r'^(select|choose|please select)', f['value'], re.I)):
                         continue
-                    answer = answers.get(text)
+                    if skip:continue
                     key = self._fact_key(f)
                     if answer is None and key:
                         answer = known.get(key)
@@ -99,19 +129,20 @@ class ApplicationEngine:
                         answer = cover_letter
                     if answer is not None and not isinstance(answer, (dict,list,bool)):
                         if f['tag'] == 'select':
-                            choices = [o for o in f['options'] if normalize(o['text'])==normalize(answer) or o['value']==str(answer)]
+                            choices = [o for o in f['options'] if o['value']==str(answer)] or [o for o in f['options'] if answer_store.normalize(o['text'])==answer_store.normalize(answer)]
                             if choices:
                                 control.select_option(value=choices[0]['value'],timeout=2000)
                                 filled.append(label)
                             else:
-                                missing.append(label+' (select an option in the browser)')
+                                ask(f)
                         else:
                             control.fill(str(answer),timeout=2000)
                             filled.append(label)
-                    elif f['required']:
-                        missing.append(label)
+                    else:
+                        ask(f)
                 except Exception as exc:
                     errors.append(label+': '+type(exc).__name__)
+                    if f['type']!='password':answer_store.record_question(label,page.url,'select' if f['tag']=='select' else 'text',f['required'],f.get('options'))
         for frame in page.frames:
             try:
                 missing.extend(frame.locator('input:invalid,select:invalid,textarea:invalid').evaluate_all("els=>els.filter(e=>e.offsetWidth||e.offsetHeight).map(e=>(e.closest('.application-question')?.querySelector('.application-label')?.innerText||[...(e.labels||[])].map(l=>l.innerText).join(' ')||e.parentElement?.parentElement?.querySelector('.application-label')?.innerText||e.name||e.id||'Required field').trim())"))
@@ -119,6 +150,7 @@ class ApplicationEngine:
                 for item in custom.all():
                     if item.is_visible() and not item.inner_text().strip():
                         missing.append('Custom required dropdown — complete it in the browser')
+                        answer_store.record_question(item.get_attribute('aria-label') or 'Custom required dropdown',page.url,'custom',True)
             except Exception:
                 pass
         return {'missing_fields':list(dict.fromkeys(missing)), 'filled_fields':filled,'field_errors':errors,'field_count':field_count,'resume_attached':resume_attached}

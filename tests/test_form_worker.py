@@ -15,6 +15,10 @@ from services.resume_engine.engine import VerifiedFactsStore
 FORM='''<h1>Job application</h1><form onsubmit="event.preventDefault();document.body.innerHTML='<h2>Application submitted successfully</h2><p>Reference: REAL-42</p>'"><label for="first">First name *</label><input id="first" required><label for="last">Last name *</label><input id="last" required><label for="mail">Email address *</label><input id="mail" type="email" required><label for="cv">Resume / CV *</label><input id="cv" type="file" required>{extra}<button>Submit application</button></form>'''
 
 class FormWorkerTests(unittest.TestCase):
+    def setUp(self):
+        self.store_patch=patch('services.application_engine.answer_store.STORE',self.root/(self._testMethodName+'-answers.json'))
+        self.questions_patch=patch('services.application_engine.answer_store.QUESTIONS',self.root/(self._testMethodName+'-questions.json'))
+        self.store_patch.start();self.questions_patch.start();self.addCleanup(self.store_patch.stop);self.addCleanup(self.questions_patch.stop)
     @classmethod
     def setUpClass(cls):
         cls.temp=tempfile.TemporaryDirectory()
@@ -100,6 +104,37 @@ class FormWorkerTests(unittest.TestCase):
         out=self.run_form(FORM.format(extra=extra),answers={'Notice period':'30 days'})
         self.assertEqual(out['status'],'Pending Approval')
         self.assertEqual(out['missing_fields'],[])
+    def test_new_question_can_be_answered_and_resumed_in_same_form(self):
+        from services.application_engine import answer_store
+        extra='<label for="salary">Expected salary in INR</label><input id="salary" required><label for="other">Portfolio description</label><textarea id="other"></textarea>'
+        worker=ApplicationEngine(browser_profile='fixture_resume',headless=True)
+        (self.root/'questions.html').write_text(FORM.format(extra=extra),encoding='utf-8')
+        pauses=[]
+        def pause(outcome):
+            pauses.append(outcome)
+            if outcome['status']=='Pending Approval':return 'cancel'
+            questions=answer_store.read(answer_store.QUESTIONS)
+            self.assertEqual({q['label'] for q in questions},{'Expected salary in INR','Portfolio description'})
+            for q in questions:
+                answer_store.save_answer(q['label'],'800000' if q['required'] else None,'application',q['url'],skip=not q['required'])
+            return 'resume'
+        with patch('services.application_engine.form_worker.load_json',return_value={'answers':{}}):
+            out=worker.run_application(self.base+'questions.html',self.facts,str(self.resume),pause=pause)
+        self.assertEqual(len(pauses),2) # Required/optional questions, then final approval gate.
+        self.assertEqual(out['status'],'Manual Action Required') # bounded steps: callback never approves submission
+        self.assertFalse(out['submission_attempted'])
+    def test_saved_full_name_updates_first_and_last_name_fields(self):
+        from services.application_engine import answer_store
+        answer_store.save_answer('Full name','Updated Fixture Candidate')
+        worker=ApplicationEngine(browser_profile='fixture_resume',headless=True)
+        (self.root/'name.html').write_text(FORM.format(extra=''),encoding='utf-8')
+        def pause(outcome):
+            self.assertEqual(worker.browser_manager._page.locator('#first').input_value(),'Updated')
+            self.assertEqual(worker.browser_manager._page.locator('#last').input_value(),'Fixture Candidate')
+            return 'cancel'
+        with patch('services.application_engine.form_worker.load_json',return_value={'answers':{}}):
+            out=worker.run_application(self.base+'name.html',self.facts,str(self.resume),pause=pause)
+        self.assertFalse(out['submission_attempted'])
     def test_startup_failure_reported(self):
         worker=ApplicationEngine(browser_profile='fixture_failure')
         with patch.object(worker.browser_manager,'start',side_effect=RuntimeError('Cannot launch browser')):

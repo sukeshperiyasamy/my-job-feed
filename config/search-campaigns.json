@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "applicant": {"max_experience_years": 2, "exams_held": [], "degrees": ["M.Tech Medical Technology", "MCA", "BSc IT"]},
+  "locations": ["Bengaluru", "Chennai", "Coimbatore", "Mysuru", "Visakhapatnam", "Remote"],
+  "campaigns": [
+    {"id": "medtech", "name": "Medical device software & R&D", "queries": ["Medical Device Software Engineer", "Biomedical Research Engineer"], "keywords": ["medical device", "biomedical", "medtech", "instrumentation", "healthcare", "diagnostics"], "resume": "MedTech / biomedical R&D"},
+    {"id": "embedded", "name": "Embedded & firmware", "queries": ["Embedded Firmware Engineer", "Embedded Software Trainee"], "keywords": ["embedded", "firmware", "esp32", "microcontroller", "arduino", "raspberry pi"], "resume": "Embedded / instrumentation"},
+    {"id": "qa", "name": "Software QA & device V&V", "queries": ["Software QA Engineer", "Medical Device Verification Validation Engineer"], "keywords": ["quality assurance", "software test", "qa engineer", "verification", "validation", "test engineer"], "resume": "Software QA / device V&V"},
+    {"id": "software", "name": "Python, full-stack & mobile", "queries": ["Junior Python Developer", "React Native Full Stack Developer"], "keywords": ["python", "full stack", "full-stack", "react native", "mobile developer", "software engineer", "software developer", "frontend", "backend"], "resume": "Software / full-stack / mobile"},
+    {"id": "ai", "name": "AI, GenAI & RAG", "queries": ["Junior AI Engineer RAG", "Generative AI Developer"], "keywords": ["generative ai", "genai", "rag", "machine learning", "ai engineer", "llm", "data science", "comfyui"], "resume": "AI / RAG software"},
+    {"id": "internships", "name": "Internships & graduate trainees", "queries": ["Software Engineer Intern", "Biomedical Graduate Engineer Trainee"], "keywords": ["intern", "trainee", "graduate engineer", "fresher", "entry level", "engineer i", "associate engineer"], "resume": "Select by technical discipline"},
+    {"id": "research", "name": "JRF, biosensors & research", "queries": ["JRF Biosensor Raman", "Project Associate Medical Technology"], "locations": ["India"], "keywords": ["jrf", "junior research fellow", "project associate", "research assistant", "raman", "sers", "biosensor", "research fellow"], "resume": "Research / Raman-SERS / biosensing"}
+  ]
+}

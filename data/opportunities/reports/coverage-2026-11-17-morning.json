@@ -1,0 +1,118 @@
+{
+  "checked_at": "2026-11-17T03:33:49.539148+00:00",
+  "reachability_targets": 104,
+  "reachable_http_200": 90,
+  "reachability_audit": "source-audit-2026-11-17T03-27-29Z.json",
+  "opening_reviews": [
+    "NIT Tiruchirappalli January 2027 brochure",
+    "NIT Rourkela Spring 2027 brochure",
+    "IIT Patna admissions page (brochure inaccessible)",
+    "IIT Madras central portal and CSE/Physics notices",
+    "IIT Guwahati foreign-national notice (not applicable)",
+    "IIT Hyderabad careers, AI imaging, MRI, NanoX and project-associate notices",
+    "CeNS official JRF/PA-I notice and form",
+    "HackerRank and Enterpret individual forms",
+    "Dozee live employer postings feed",
+    "BPL dated individual posting",
+    "Tricog talent-pool page",
+    "Phoenix individual service-engineer posting",
+    "Canonical previously recorded URL (404)",
+    "NCBS original portal blocked; secondary lead only"
+  ],
+  "coverage_note": "All directory URLs attempted for reachability only. Employer vacancies and IIT/NIT departments were NOT comprehensively reviewed. HTTP 200 does not verify an opening.",
+  "source_failures": [
+    {
+      "name": "AgVa Healthcare",
+      "url": "https://agvahealthcare.com/",
+      "status": null,
+      "error": "SSLError"
+    },
+    {
+      "name": "IIT Bombay",
+      "url": "https://iitb.ac.in/",
+      "status": null,
+      "error": "ConnectionError"
+    },
+    {
+      "name": "IIT Kharagpur",
+      "url": "https://iitkgp.ac.in/",
+      "status": null,
+      "error": "ConnectionError"
+    },
+    {
+      "name": "IIT Jodhpur",
+      "url": "https://iitj.ac.in/",
+      "status": null,
+      "error": "SSLError"
+    },
+    {
+      "name": "IIT Bhubaneswar",
+      "url": "https://iitbbs.ac.in/",
+      "status": null,
+      "error": "SSLError"
+    },
+    {
+      "name": "IIT Bhilai",
+      "url": "https://iitbhilai.ac.in/",
+      "status": null,
+      "error": "SSLError"
+    },
+    {
+      "name": "NIT Rourkela",
+      "url": "https://nitrkl.ac.in/",
+      "status": null,
+      "error": "ConnectTimeout"
+    },
+    {
+      "name": "NIT Silchar",
+      "url": "https://nits.ac.in/",
+      "status": null,
+      "error": "ConnectionError"
+    },
+    {
+      "name": "NIT Raipur",
+      "url": "https://nitrr.ac.in/",
+      "status": null,
+      "error": "SSLError"
+    },
+    {
+      "name": "NIT Nagaland",
+      "url": "https://nitnagaland.ac.in/",
+      "status": null,
+      "error": "SSLError"
+    },
+    {
+      "name": "NIT Puducherry",
+      "url": "https://nitpy.ac.in/",
+      "status": null,
+      "error": "ConnectTimeout"
+    },
+    {
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs",
+      "status": 403,
+      "error": null
+    },
+    {
+      "name": "Upwork",
+      "url": "https://www.upwork.com/",
+      "status": 403,
+      "error": null
+    },
+    {
+      "name": "HiringCafe",
+      "url": "https://hiringcafe.com/",
+      "status": 403,
+      "error": null
+    }
+  ],
+  "excluded": [
+    "IITH NanoX Research Associate: PhD and 10 years required",
+    "IITH Project Associate: civil/construction administration, 10 years",
+    "IITH MRI JRF: linked form no longer accepting despite rolling page",
+    "IIT Guwahati January 2027 new notice: foreign nationals only",
+    "Phoenix Service Engineer: north/east locations, ECE/EEE qualification acceptance unestablished"
+  ],
+  "comparison": "Compared against preceding 16-Nov seeded report snapshot; canonical URL duplicates normalized while retaining original IDs. Newly recorded does not mean newly posted.",
+  "applications_submitted": 0
+}

@@ -80,7 +80,7 @@ def run_jobspy_discovery(
             try:
                 posting_date = pd.to_datetime(row.get("date_posted")).to_pydatetime()
             except Exception:
-                posting_date = datetime.now(timezone.utc)
+                posting_date = None
 
         job_record = {
             "source": str(row.get("site", "jobspy")).lower(),
@@ -94,7 +94,7 @@ def run_jobspy_discovery(
             "salary_max": salary_max,
             "salary_currency": str(row.get("currency", "INR") or "INR"),
             "description": str(row.get("description", "") or ""),
-            "posting_date": posting_date or datetime.now(timezone.utc),
+            "posting_date": posting_date,
             "discovery_date": datetime.now(timezone.utc),
             "is_eligible": True,
             "status": "Discovered"

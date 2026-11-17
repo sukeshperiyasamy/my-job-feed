@@ -8,7 +8,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:13.815259+00:00",
+    "source_checked_at": "2026-11-17T12:28:26.614435+00:00",
     "http_status": 200
   },
   {
@@ -20,7 +20,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:13.815259+00:00",
+    "source_checked_at": "2026-11-17T12:28:26.614435+00:00",
     "http_status": 200
   },
   {
@@ -32,7 +32,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:13.816574+00:00",
+    "source_checked_at": "2026-11-17T12:28:26.614435+00:00",
     "http_status": 200
   },
   {
@@ -44,7 +44,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:13.816574+00:00",
+    "source_checked_at": "2026-11-17T12:28:26.614435+00:00",
     "http_status": 200
   },
   {
@@ -56,7 +56,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:13.817079+00:00",
+    "source_checked_at": "2026-11-17T12:28:26.615434+00:00",
     "http_status": 200
   },
   {
@@ -68,7 +68,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:13.817079+00:00",
+    "source_checked_at": "2026-11-17T12:28:26.615434+00:00",
     "http_status": 200
   },
   {
@@ -80,7 +80,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:14.995857+00:00",
+    "source_checked_at": "2026-11-17T12:28:27.651794+00:00",
     "http_status": 200
   },
   {
@@ -92,7 +92,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:14.996857+00:00",
+    "source_checked_at": "2026-11-17T12:28:28.372267+00:00",
     "http_status": null,
     "source_error": "SSLError"
   },
@@ -105,7 +105,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:15.392868+00:00",
+    "source_checked_at": "2026-11-17T12:28:28.507631+00:00",
     "http_status": 200
   },
   {
@@ -117,7 +117,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:15.661556+00:00",
+    "source_checked_at": "2026-11-17T12:28:28.543906+00:00",
     "http_status": 200
   },
   {
@@ -129,7 +129,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:15.721909+00:00",
+    "source_checked_at": "2026-11-17T12:28:28.557991+00:00",
     "http_status": 200
   },
   {
@@ -141,7 +141,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:16.022184+00:00",
+    "source_checked_at": "2026-11-17T12:28:28.926643+00:00",
     "http_status": 200
   },
   {
@@ -153,7 +153,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:16.372993+00:00",
+    "source_checked_at": "2026-11-17T12:28:29.447684+00:00",
     "http_status": 200
   },
   {
@@ -165,7 +165,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:17.602017+00:00",
+    "source_checked_at": "2026-11-17T12:28:29.495511+00:00",
     "http_status": 200
   },
   {
@@ -177,7 +177,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:17.720960+00:00",
+    "source_checked_at": "2026-11-17T12:28:29.939990+00:00",
     "http_status": 200
   },
   {
@@ -189,7 +189,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:17.745712+00:00",
+    "source_checked_at": "2026-11-17T12:28:30.729871+00:00",
     "http_status": 200
   },
   {
@@ -201,7 +201,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:17.984333+00:00",
+    "source_checked_at": "2026-11-17T12:28:30.902918+00:00",
     "http_status": 200
   },
   {
@@ -213,7 +213,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:18.914247+00:00",
+    "source_checked_at": "2026-11-17T12:28:31.920035+00:00",
     "http_status": 200
   },
   {
@@ -224,9 +224,10 @@
       "job"
     ],
     "kind": "Employer career source",
-    "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:19.225868+00:00",
-    "http_status": 200
+    "coverage": "Source could not be retrieved; individual opening remains unverified",
+    "source_checked_at": "2026-11-17T12:28:31.986665+00:00",
+    "http_status": null,
+    "source_error": "ReadTimeout"
   },
   {
     "name": "Forus Health",
@@ -237,7 +238,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:20.122300+00:00",
+    "source_checked_at": "2026-11-17T12:28:32.306597+00:00",
     "http_status": 200
   },
   {
@@ -249,7 +250,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:20.254637+00:00",
+    "source_checked_at": "2026-11-17T12:28:33.288564+00:00",
     "http_status": 200
   },
   {
@@ -261,7 +262,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:21.459197+00:00",
+    "source_checked_at": "2026-11-17T12:28:33.800172+00:00",
     "http_status": 200
   },
   {
@@ -273,7 +274,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:22.208837+00:00",
+    "source_checked_at": "2026-11-17T12:28:34.169819+00:00",
     "http_status": 200
   },
   {
@@ -285,7 +286,7 @@
     ],
     "kind": "Employer career source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:22.305273+00:00",
+    "source_checked_at": "2026-11-17T12:28:34.845640+00:00",
     "http_status": 200
   },
   {
@@ -296,9 +297,10 @@
       "job"
     ],
     "kind": "Employer career source",
-    "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:22.632140+00:00",
-    "http_status": 200
+    "coverage": "Source could not be retrieved; individual opening remains unverified",
+    "source_checked_at": "2026-11-17T12:28:35.370990+00:00",
+    "http_status": null,
+    "source_error": "ReadTimeout"
   },
   {
     "name": "IIT Madras",
@@ -308,7 +310,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:23.089742+00:00",
+    "source_checked_at": "2026-11-17T12:28:35.644833+00:00",
     "http_status": 200
   },
   {
@@ -319,7 +321,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:23.309133+00:00",
+    "source_checked_at": "2026-11-17T12:28:35.659086+00:00",
     "http_status": null,
     "source_error": "ConnectionError"
   },
@@ -331,7 +333,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:23.617454+00:00",
+    "source_checked_at": "2026-11-17T12:28:35.905915+00:00",
     "http_status": 200
   },
   {
@@ -342,7 +344,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:23.704956+00:00",
+    "source_checked_at": "2026-11-17T12:28:36.066418+00:00",
     "http_status": 200
   },
   {
@@ -353,7 +355,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:23.833537+00:00",
+    "source_checked_at": "2026-11-17T12:28:36.701088+00:00",
     "http_status": null,
     "source_error": "ConnectionError"
   },
@@ -365,7 +367,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:24.233057+00:00",
+    "source_checked_at": "2026-11-17T12:28:36.911368+00:00",
     "http_status": 200
   },
   {
@@ -376,7 +378,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:24.398876+00:00",
+    "source_checked_at": "2026-11-17T12:28:37.254648+00:00",
     "http_status": 200
   },
   {
@@ -387,7 +389,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:24.560932+00:00",
+    "source_checked_at": "2026-11-17T12:28:37.285765+00:00",
     "http_status": 200
   },
   {
@@ -398,7 +400,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:24.886426+00:00",
+    "source_checked_at": "2026-11-17T12:28:37.336144+00:00",
     "http_status": null,
     "source_error": "SSLError"
   },
@@ -410,7 +412,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:25.147814+00:00",
+    "source_checked_at": "2026-11-17T12:28:37.504096+00:00",
     "http_status": 200
   },
   {
@@ -421,7 +423,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:25.343026+00:00",
+    "source_checked_at": "2026-11-17T12:28:38.025833+00:00",
     "http_status": null,
     "source_error": "SSLError"
   },
@@ -433,7 +435,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:25.371140+00:00",
+    "source_checked_at": "2026-11-17T12:28:38.276489+00:00",
     "http_status": 200
   },
   {
@@ -444,7 +446,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:25.447426+00:00",
+    "source_checked_at": "2026-11-17T12:28:38.472085+00:00",
     "http_status": 200
   },
   {
@@ -455,7 +457,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:26.029112+00:00",
+    "source_checked_at": "2026-11-17T12:28:38.713097+00:00",
     "http_status": 200
   },
   {
@@ -466,7 +468,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:26.100356+00:00",
+    "source_checked_at": "2026-11-17T12:28:39.053530+00:00",
     "http_status": 200
   },
   {
@@ -477,7 +479,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:26.161104+00:00",
+    "source_checked_at": "2026-11-17T12:28:39.105898+00:00",
     "http_status": 200
   },
   {
@@ -488,7 +490,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:26.374168+00:00",
+    "source_checked_at": "2026-11-17T12:28:39.392178+00:00",
     "http_status": 200
   },
   {
@@ -499,7 +501,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:26.463740+00:00",
+    "source_checked_at": "2026-11-17T12:28:39.406477+00:00",
     "http_status": 200
   },
   {
@@ -510,7 +512,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:26.500140+00:00",
+    "source_checked_at": "2026-11-17T12:28:39.439736+00:00",
     "http_status": 200
   },
   {
@@ -521,7 +523,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:26.567453+00:00",
+    "source_checked_at": "2026-11-17T12:28:39.460646+00:00",
     "http_status": 200
   },
   {
@@ -532,7 +534,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:26.706977+00:00",
+    "source_checked_at": "2026-11-17T12:28:40.143446+00:00",
     "http_status": 200
   },
   {
@@ -543,7 +545,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:27.017833+00:00",
+    "source_checked_at": "2026-11-17T12:28:40.225556+00:00",
     "http_status": 200
   },
   {
@@ -554,7 +556,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:27.187489+00:00",
+    "source_checked_at": "2026-11-17T12:28:40.393305+00:00",
     "http_status": null,
     "source_error": "SSLError"
   },
@@ -566,7 +568,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:27.237423+00:00",
+    "source_checked_at": "2026-11-17T12:28:40.569675+00:00",
     "http_status": 200
   },
   {
@@ -577,7 +579,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:27.271539+00:00",
+    "source_checked_at": "2026-11-17T12:28:41.174404+00:00",
     "http_status": 200
   },
   {
@@ -588,7 +590,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:27.670096+00:00",
+    "source_checked_at": "2026-11-17T12:28:41.459909+00:00",
     "http_status": 200
   },
   {
@@ -599,7 +601,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:27.696354+00:00",
+    "source_checked_at": "2026-11-17T12:28:41.565007+00:00",
     "http_status": 200
   },
   {
@@ -610,7 +612,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:27.698357+00:00",
+    "source_checked_at": "2026-11-17T12:28:41.860105+00:00",
     "http_status": null,
     "source_error": "ConnectTimeout"
   },
@@ -622,7 +624,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:28.005800+00:00",
+    "source_checked_at": "2026-11-17T12:28:42.378523+00:00",
     "http_status": 200
   },
   {
@@ -633,7 +635,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:28.239508+00:00",
+    "source_checked_at": "2026-11-17T12:28:43.144312+00:00",
     "http_status": 200
   },
   {
@@ -644,7 +646,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:28.435964+00:00",
+    "source_checked_at": "2026-11-17T12:28:43.201845+00:00",
     "http_status": 200
   },
   {
@@ -655,7 +657,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:28.728743+00:00",
+    "source_checked_at": "2026-11-17T12:28:43.889591+00:00",
     "http_status": 200
   },
   {
@@ -666,7 +668,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:28.930530+00:00",
+    "source_checked_at": "2026-11-17T12:28:43.915964+00:00",
     "http_status": 200
   },
   {
@@ -677,7 +679,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:28.939538+00:00",
+    "source_checked_at": "2026-11-17T12:28:44.600509+00:00",
     "http_status": 200
   },
   {
@@ -688,7 +690,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:29.563229+00:00",
+    "source_checked_at": "2026-11-17T12:28:44.684394+00:00",
     "http_status": 200
   },
   {
@@ -699,7 +701,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:29.962432+00:00",
+    "source_checked_at": "2026-11-17T12:28:45.337689+00:00",
     "http_status": 200
   },
   {
@@ -710,7 +712,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:30.246024+00:00",
+    "source_checked_at": "2026-11-17T12:28:45.602646+00:00",
     "http_status": 200
   },
   {
@@ -721,7 +723,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:30.651017+00:00",
+    "source_checked_at": "2026-11-17T12:28:45.902578+00:00",
     "http_status": 200
   },
   {
@@ -732,7 +734,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:30.803014+00:00",
+    "source_checked_at": "2026-11-17T12:28:46.002789+00:00",
     "http_status": null,
     "source_error": "ConnectionError"
   },
@@ -744,7 +746,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:30.879864+00:00",
+    "source_checked_at": "2026-11-17T12:28:46.257717+00:00",
     "http_status": 200
   },
   {
@@ -755,7 +757,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:31.238674+00:00",
+    "source_checked_at": "2026-11-17T12:28:46.430330+00:00",
     "http_status": 200
   },
   {
@@ -766,7 +768,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:31.243691+00:00",
+    "source_checked_at": "2026-11-17T12:28:46.526096+00:00",
     "http_status": null,
     "source_error": "SSLError"
   },
@@ -778,7 +780,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:31.597021+00:00",
+    "source_checked_at": "2026-11-17T12:28:46.664091+00:00",
     "http_status": 200
   },
   {
@@ -789,7 +791,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:31.653200+00:00",
+    "source_checked_at": "2026-11-17T12:28:46.836740+00:00",
     "http_status": 200
   },
   {
@@ -800,7 +802,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:31.957856+00:00",
+    "source_checked_at": "2026-11-17T12:28:47.017246+00:00",
     "http_status": 200
   },
   {
@@ -811,7 +813,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:32.031153+00:00",
+    "source_checked_at": "2026-11-17T12:28:47.056369+00:00",
     "http_status": 200
   },
   {
@@ -822,7 +824,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:32.591800+00:00",
+    "source_checked_at": "2026-11-17T12:28:47.125034+00:00",
     "http_status": 200
   },
   {
@@ -833,7 +835,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:32.732562+00:00",
+    "source_checked_at": "2026-11-17T12:28:47.754751+00:00",
     "http_status": 200
   },
   {
@@ -844,7 +846,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:32.826639+00:00",
+    "source_checked_at": "2026-11-17T12:28:47.757429+00:00",
     "http_status": 200
   },
   {
@@ -855,7 +857,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:32.954093+00:00",
+    "source_checked_at": "2026-11-17T12:28:47.914786+00:00",
     "http_status": null,
     "source_error": "SSLError"
   },
@@ -867,9 +869,9 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source could not be retrieved; individual opening remains unverified",
-    "source_checked_at": "2026-11-16T12:57:33.101214+00:00",
+    "source_checked_at": "2026-11-17T12:28:47.986003+00:00",
     "http_status": null,
-    "source_error": "ConnectTimeout"
+    "source_error": "SSLError"
   },
   {
     "name": "NIT Sikkim",
@@ -879,7 +881,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:33.720442+00:00",
+    "source_checked_at": "2026-11-17T12:28:48.439148+00:00",
     "http_status": 200
   },
   {
@@ -890,7 +892,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:34.589616+00:00",
+    "source_checked_at": "2026-11-17T12:28:48.642981+00:00",
     "http_status": 200
   },
   {
@@ -901,7 +903,7 @@
     ],
     "kind": "Institute admission / project recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:34.691229+00:00",
+    "source_checked_at": "2026-11-17T12:28:48.672226+00:00",
     "http_status": 200
   },
   {
@@ -912,7 +914,7 @@
     ],
     "kind": "Research recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:34.976892+00:00",
+    "source_checked_at": "2026-11-17T12:28:48.874752+00:00",
     "http_status": 200
   },
   {
@@ -923,7 +925,7 @@
     ],
     "kind": "Research recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:35.420750+00:00",
+    "source_checked_at": "2026-11-17T12:28:49.250111+00:00",
     "http_status": 200
   },
   {
@@ -934,7 +936,7 @@
     ],
     "kind": "Research recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:35.923752+00:00",
+    "source_checked_at": "2026-11-17T12:28:49.570826+00:00",
     "http_status": 200
   },
   {
@@ -945,7 +947,7 @@
     ],
     "kind": "Research recruitment source",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:36.007766+00:00",
+    "source_checked_at": "2026-11-17T12:28:49.676739+00:00",
     "http_status": 200
   },
   {
@@ -956,7 +958,7 @@
     ],
     "kind": "Employer remote roles",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:36.227937+00:00",
+    "source_checked_at": "2026-11-17T12:28:50.221423+00:00",
     "http_status": 200
   },
   {
@@ -967,7 +969,7 @@
     ],
     "kind": "Remote job board",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:36.234505+00:00",
+    "source_checked_at": "2026-11-17T12:28:50.274259+00:00",
     "http_status": 200
   },
   {
@@ -978,7 +980,7 @@
     ],
     "kind": "Remote job board",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:36.670693+00:00",
+    "source_checked_at": "2026-11-17T12:28:50.276259+00:00",
     "http_status": 200
   },
   {
@@ -991,7 +993,7 @@
     ],
     "kind": "Remote job board",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:36.708782+00:00",
+    "source_checked_at": "2026-11-17T12:28:50.404487+00:00",
     "http_status": 200
   },
   {
@@ -1004,7 +1006,7 @@
     ],
     "kind": "Remote job board",
     "coverage": "Source-page HTTP 403; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:36.981390+00:00",
+    "source_checked_at": "2026-11-17T12:28:50.762593+00:00",
     "http_status": 403
   },
   {
@@ -1015,7 +1017,7 @@
     ],
     "kind": "Remote job board",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:37.349448+00:00",
+    "source_checked_at": "2026-11-17T12:28:50.824602+00:00",
     "http_status": 200
   },
   {
@@ -1026,7 +1028,7 @@
     ],
     "kind": "Job board",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:37.410404+00:00",
+    "source_checked_at": "2026-11-17T12:28:50.887139+00:00",
     "http_status": 200
   },
   {
@@ -1037,7 +1039,7 @@
     ],
     "kind": "Remote job board",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:37.450616+00:00",
+    "source_checked_at": "2026-11-17T12:28:51.253827+00:00",
     "http_status": 200
   },
   {
@@ -1048,7 +1050,7 @@
     ],
     "kind": "AI-training contract platform",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:37.452120+00:00",
+    "source_checked_at": "2026-11-17T12:28:51.360006+00:00",
     "http_status": 200
   },
   {
@@ -1059,7 +1061,7 @@
     ],
     "kind": "AI/software contract platform",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:38.297464+00:00",
+    "source_checked_at": "2026-11-17T12:28:51.876874+00:00",
     "http_status": 200
   },
   {
@@ -1070,7 +1072,7 @@
     ],
     "kind": "AI-training contract platform",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:38.451289+00:00",
+    "source_checked_at": "2026-11-17T12:28:51.972677+00:00",
     "http_status": 200
   },
   {
@@ -1081,7 +1083,7 @@
     ],
     "kind": "AI-training contract platform",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:38.470873+00:00",
+    "source_checked_at": "2026-11-17T12:28:51.984558+00:00",
     "http_status": 200
   },
   {
@@ -1092,7 +1094,7 @@
     ],
     "kind": "Freelance marketplace",
     "coverage": "Source-page HTTP 403; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:38.511249+00:00",
+    "source_checked_at": "2026-11-17T12:28:52.358459+00:00",
     "http_status": 403
   },
   {
@@ -1103,7 +1105,7 @@
     ],
     "kind": "Freelance marketplace",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:39.025363+00:00",
+    "source_checked_at": "2026-11-17T12:28:52.644132+00:00",
     "http_status": 200
   },
   {
@@ -1114,7 +1116,7 @@
     ],
     "kind": "Freelance marketplace",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:39.043275+00:00",
+    "source_checked_at": "2026-11-17T12:28:52.666701+00:00",
     "http_status": 200
   },
   {
@@ -1125,7 +1127,7 @@
     ],
     "kind": "Freelance marketplace",
     "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
-    "source_checked_at": "2026-11-16T12:57:39.088538+00:00",
+    "source_checked_at": "2026-11-17T12:28:52.766561+00:00",
     "http_status": 200
   },
   {
@@ -1137,7 +1139,9 @@
       "job"
     ],
     "kind": "Employer-link job search",
-    "coverage": "Browser connection available; no vacancy or India eligibility inferred."
+    "coverage": "Source-page HTTP 403; this does not verify any vacancy or eligibility",
+    "source_checked_at": "2026-11-17T12:28:52.823456+00:00",
+    "http_status": 403
   },
   {
     "name": "Wellfound",
@@ -1148,7 +1152,9 @@
       "job"
     ],
     "kind": "Startup job board",
-    "coverage": "Browser connection available; no vacancy or India eligibility inferred."
+    "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
+    "source_checked_at": "2026-11-17T12:28:53.088100+00:00",
+    "http_status": 200
   },
   {
     "name": "Y Combinator Jobs",
@@ -1159,7 +1165,9 @@
       "job"
     ],
     "kind": "YC startup job board",
-    "coverage": "Browser connection available; no vacancy or India eligibility inferred."
+    "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
+    "source_checked_at": "2026-11-17T12:28:53.163653+00:00",
+    "http_status": 200
   },
   {
     "name": "Welcome to the Jungle",
@@ -1170,7 +1178,9 @@
       "job"
     ],
     "kind": "Job board",
-    "coverage": "Browser connection available; no vacancy or India eligibility inferred."
+    "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
+    "source_checked_at": "2026-11-17T12:28:53.541070+00:00",
+    "http_status": 200
   },
   {
     "name": "ZipRecruiter",
@@ -1181,6 +1191,8 @@
       "job"
     ],
     "kind": "Job board",
-    "coverage": "Browser connection available; no vacancy or India eligibility inferred."
+    "coverage": "Source-page HTTP 200; this does not verify any vacancy or eligibility",
+    "source_checked_at": "2026-11-17T12:28:53.549577+00:00",
+    "http_status": 200
   }
 ]

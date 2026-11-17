@@ -8,7 +8,7 @@ from urllib.parse import urlsplit
 from services.application_engine.engine import ApplicationEngine
 from services.application_engine.form_worker import load_json
 from services.application_engine.portals import portal_for_url
-from services.integration_bridge.models import Application, ApplicationAttempt, ApplicationState, ExecutionLog
+from services.integration_bridge.models import Application, ApplicationAttempt, ApplicationState, ExecutionLog, JobVerification
 from services.resume_engine.engine import VerifiedFactsStore
 
 class ApplicationSessions:
@@ -54,6 +54,9 @@ class ApplicationSessions:
                     raise ValueError('Application not found.')
                 if record.state==ApplicationState.SUBMITTED:
                     raise ValueError('This application is already submitted. Duplicate prevented.')
+                verification=db.get(JobVerification,record.job_id)
+                if verification and verification.availability=='expired':
+                    raise ValueError('This posting was checked as expired. Recheck its availability before starting an application.')
                 if record.state not in [ApplicationState.PENDING_APPROVAL,ApplicationState.FAILED,ApplicationState.MANUAL_ACTION_REQUIRED]:
                     raise ValueError('Application is not ready. A stale Applying state must be reviewed before retrying.')
                 previous=self.status(application_id)

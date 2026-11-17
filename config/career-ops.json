@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/career-ops-hq/career-ops",
+  "commit": "0ad9049f726105894bc9e85843ab7f510646baf0",
+  "sources": [
+    {"id":"dozee","name":"Dozee","provider":"lever","url":"https://jobs.lever.co/dozee","default":true},
+    {"id":"hackerrank","name":"HackerRank","provider":"greenhouse","url":"https://job-boards.greenhouse.io/hackerrank","default":true},
+    {"id":"enterpret","name":"Enterpret","provider":"greenhouse","url":"https://job-boards.greenhouse.io/enterpret","default":true},
+    {"id":"dehazelabs","name":"DehazeLabs","provider":"ashby","url":"https://jobs.ashbyhq.com/DehazeLabs","default":false},
+    {"id":"himalayas","name":"Himalayas","provider":"himalayas","url":"https://himalayas.app/jobs","default":false},
+    {"id":"remotive","name":"Remotive","provider":"remotive","url":"https://remotive.com/remote-jobs","default":false},
+    {"id":"weworkremotely","name":"We Work Remotely","provider":"weworkremotely","url":"https://weworkremotely.com/","default":false}
+  ]
+}

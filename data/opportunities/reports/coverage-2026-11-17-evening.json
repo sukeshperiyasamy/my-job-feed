@@ -1,0 +1,235 @@
+{
+  "checked_at": "2026-11-17T12:35:06.206278+00:00",
+  "previous_report": "2026-11-17T03-33-00Z.md",
+  "current_report": "2026-11-17T12-35-06Z.md",
+  "source_directory_targets": 104,
+  "http_200": 88,
+  "reachability_audit": "source-audit-2026-11-17T12-28-56Z.json",
+  "reviewed_sources": [
+    {
+      "name": "NIT Meghalaya Spring 2027",
+      "status": "Verified open notice; application requires Google sign-in; funding unresolved",
+      "url": "https://nitm.ac.in/news_details.php?p=1839"
+    },
+    {
+      "name": "NIT Trichy January 2027",
+      "status": "Reconfirmed deadline; degree/GATE-path restrictions unresolved",
+      "url": "https://www.nitt.edu/home/admissions/phd/"
+    },
+    {
+      "name": "IIT Patna January 2027",
+      "status": "Reconfirmed deadline tomorrow; departmental eligibility unresolved",
+      "url": "https://academics.iitp.ac.in/index.php?Itemid=188&id=125&layout=edit&option=com_content&view=article"
+    },
+    {
+      "name": "NIT Rourkela Spring 2027",
+      "status": "Rechecked official notice; applicant qualification equivalence and fellowship remain conditional",
+      "url": "https://www.nitrkl.ac.in/docs/Announcement/13112026183741742.pdf"
+    },
+    {
+      "name": "IIT Madras January 2027",
+      "status": "Main application deadline passed; department notices do not prove reopening",
+      "url": "https://research.iitm.ac.in/"
+    },
+    {
+      "name": "CeNS PA-I/JRF",
+      "status": "Expired at 17:00 IST today; no extension verified",
+      "url": "https://www.cens.res.in/en/opportunities/scientific-and-technical"
+    },
+    {
+      "name": "NIT Agartala and NIT Manipur",
+      "status": "Official 2027 index notices; scanned PDFs require visual review; not counted open",
+      "url": "https://www.nita.ac.in/userpanel/StudentNotification.aspx"
+    },
+    {
+      "name": "HackerRank internship",
+      "status": "Application form still accessible; existing lead, not newly posted",
+      "url": "https://job-boards.greenhouse.io/hackerrank/jobs/8229735"
+    },
+    {
+      "name": "Enterpret internship",
+      "status": "Application form still accessible; current-enrollment/prior-internship restrictions remain",
+      "url": "https://job-boards.greenhouse.io/enterpret/jobs/7847134003"
+    },
+    {
+      "name": "GE HealthCare Intern R4045952",
+      "status": "Original URL 410 Gone; index is stale",
+      "url": "https://careers.gehealthcare.com/global/en/job/GEVGHLGLOBALR4045952EXTERNALENGLOBAL/Intern"
+    },
+    {
+      "name": "NIRAMAI junior Android / ML intern",
+      "status": "Archive entries remain; individual links return 404",
+      "url": "https://niramai.com/career/"
+    },
+    {
+      "name": "Boeing Associate Software Engineer Analytics",
+      "status": "Excluded: 5-8 years or engineering masters +4 years, despite Associate title",
+      "url": "https://jobs.boeing.com/job/bengaluru/associate-software-engineer-analytics/185/94527151744"
+    },
+    {
+      "name": "Danaher Software Engineer I R1317017",
+      "status": "Original Workday page had no readable description/application evidence; unverified",
+      "url": "https://danaher.wd1.myworkdayjobs.com/DanaherJobs/job/Bangalore-Karnataka-India/Software-Engineer-I_R1317017"
+    },
+    {
+      "name": "DehazeLabs remote Junior Python",
+      "status": "Original job URL 404 and role absent from active public employer feed",
+      "url": "https://jobs.ashbyhq.com/DehazeLabs/3fc045c8-c43d-4523-b258-80e35b2930ed"
+    }
+  ],
+  "named_employer_coverage": [
+    {
+      "name": "BPL Medical Technologies",
+      "url": "https://www.bplmedicaltechnologies.com/careers/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Trivitron Healthcare",
+      "url": "https://www.trivitron.com/careers",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Meril",
+      "url": "https://www.merillife.com/careers/current-openings",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Transasia Bio-Medicals",
+      "url": "https://www.transasia.co.in/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Skanray Technologies",
+      "url": "https://skanray.com/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "NIRAMAI",
+      "url": "https://niramai.com/careers",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Tricog Health",
+      "url": "https://tricog.com/careers/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "AgVa Healthcare",
+      "url": "https://agvahealthcare.com/",
+      "http_status": null,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Molbio Diagnostics",
+      "url": "https://www.molbiodiagnostics.com/careers/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Tata Elxsi Medical",
+      "url": "https://www.tataelxsi.com/careers/job-openings",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Philips",
+      "url": "https://www.careers.philips.com/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "GE HealthCare",
+      "url": "https://careers.gehealthcare.com/global/en/internship",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Siemens Healthineers",
+      "url": "https://www.siemens-healthineers.com/careers",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Medtronic",
+      "url": "https://www.medtronic.com/en-us/our-company/careers.html",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Stryker",
+      "url": "https://careers.stryker.com/jobs",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "BD",
+      "url": "https://jobs.bd.com/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Johnson & Johnson MedTech",
+      "url": "https://www.careers.jnj.com/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Zimmer Biomet",
+      "url": "https://careers.zimmerbiomet.com/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Smith+Nephew",
+      "url": "https://www.smith-nephew.com/en/careers",
+      "http_status": null,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Forus Health",
+      "url": "https://www.forushealth.com/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Baxter",
+      "url": "https://jobs.baxter.com/",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Beckman Coulter / Danaher",
+      "url": "https://jobs.danaher.com/global/en/beckman-coulter-diagnostics",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Perfint Healthcare",
+      "url": "https://www.perfinthealthcare.com/careers.php",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    },
+    {
+      "name": "Phoenix Medical Systems",
+      "url": "https://www.phoenixmedicalsystems.com/career",
+      "http_status": 200,
+      "semantic_vacancy_review": "See reviewed_sources; reachability alone is not verification"
+    }
+  ],
+  "coverage_gaps": [
+    "104 directory URLs attempted for reachability only, including all 19 named employers; most individual vacancies, faculty calls and department notices were not comprehensively reviewed.",
+    "Agartala/Manipur scanned notices and VNIT Google Drive documents need further review.",
+    "Most non-priority IIT/NIT targets received reachability checks only.",
+    "No new original-source verified priority-city 0-2-year job or remote role was identified in this reviewed subset.",
+    "Himalayas/AI-training/freelance programme availability not individually reverified in this pass; no assessments or proposals attempted."
+  ],
+  "applications_submitted": 0,
+  "messages_sent": 0
+}

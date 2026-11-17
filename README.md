@@ -186,3 +186,18 @@ Validate scrapers, database integrity, resume compilation, and browser isolates:
 
 ## 📄 License
 This project is licensed under the [MIT License](LICENSE).
+
+## Career Ops integration
+
+The **Career Ops** dashboard tab imports public employer/remote feeds and checks
+saved job availability while retaining this project's screening and approval queue.
+See [setup, supported providers and limits](docs/21-career-ops-integration.md) and
+[upstream attribution](integrations/career-ops/NOTICE.md).
+
+## Extended discovery and freelance projects
+
+**Discovery coverage** integrates the FreeHire search/parser from the supplied
+AI Job Search repository, with rotating India/remote queries and explicit import,
+duplicate and exclusion counts. **Freelancing** tracks project briefs, budgets,
+editable proposal drafts and client stages. See [usage and integration limits](docs/22-extended-discovery-and-freelancing.md)
+and [source attribution](integrations/ai-job-search/NOTICE.md).

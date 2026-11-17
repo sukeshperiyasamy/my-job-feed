@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/ai-job-search-dev/ai-job-search",
+  "commit": "8bdd2a27bc2ad2baf0cd86ecb11e19228ce71d32",
+  "files": {
+    "helpers.ts": "6686d2727adaec1aaeadfcc9ecdae693e54a0de940424860a3730a7a766ca3da",
+    "commands/search.ts": "0df21b669b4b9af9876e1ee5612676b18e00eb4e89ac627bd581227b08d24740"
+  }
+}

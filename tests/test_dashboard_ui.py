@@ -118,7 +118,7 @@ class DashboardTest(unittest.TestCase):
             self.assertIn(('POST','/api/jobs/1/score'), calls)
             page.locator('[data-add]').first.click()
             for key,value in {'title':'Research Engineer','company_name':'Research Co','canonical_url':'https://example.com/new-role','description':'Python research'}.items():
-                page.locator(f'[name="{key}"]').fill(value)
+                page.locator(f'#job-form [name="{key}"]').fill(value)
             page.locator('#save-job').click()
             page.wait_for_function("!document.getElementById('add-dialog').open")
             self.assertIn(('POST','/api/jobs'), calls)
